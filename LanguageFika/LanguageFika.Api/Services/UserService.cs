@@ -15,26 +15,29 @@ public class UserService: IUserService
     }
     
     public Task<User> GetUsersAsync(){
-        return _dbContext.Users.FirstOrDefaultAsync();
-    }
-
-    public Task<User> GetUserAsync(string username){
-        throw new NotImplementedException();
+        return _dbContext.Users!.FirstOrDefaultAsync()!;
     }
 
     public Task<User> GetUserAsync(Guid id){
-        throw new NotImplementedException();
+        return _dbContext.Users!.FirstOrDefaultAsync(x => x.UserId == id)!;
     }
 
     public Task<User> CreateUserAsync(User user){
-        throw new NotImplementedException();
+        _dbContext.Users!.Add(user);
+        _dbContext.SaveChanges();
+        return Task.FromResult(user);
     }
 
     public Task<User> UpdateUserAsync(User user){
-        throw new NotImplementedException();
+        _dbContext.Users!.Update(user);
+        _dbContext.SaveChanges();
+        return Task.FromResult(user);
     }
 
     public Task DeleteUserAsync(Guid id){
-        throw new NotImplementedException();
+        var user = _dbContext.Users!.FirstOrDefault(x => x.UserId == id);
+        _dbContext.Users!.Remove(user!);
+        _dbContext.SaveChanges();
+        return Task.CompletedTask;
     }
 }

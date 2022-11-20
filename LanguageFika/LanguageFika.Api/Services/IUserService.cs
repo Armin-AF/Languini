@@ -5,7 +5,6 @@ namespace LanguageFika.Api.Services;
 public interface IUserService
 {
     Task<User> GetUsersAsync();
-    Task<User> GetUserAsync(string username);
     Task<User> GetUserAsync(Guid id);
     
     Task<User> CreateUserAsync(User user);
