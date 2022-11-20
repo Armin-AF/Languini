@@ -60,7 +60,7 @@ public class DbInitializer
                 Date = new DateTime(2022, 12, 15,  18, 0, 0),
                 Description = "This is a test meeting 6",
                 Location = "Test location 6",
-                Language = "English",
+                Language = "Swedish",
             },
             new Meeting
             {
@@ -72,7 +72,7 @@ public class DbInitializer
             },
             new Meeting
             {
-                MeetingId = new Guid("c7000121-7001-eb11-8146-002500001c4q"),
+                MeetingId = new Guid("c7v00121-7001-eb11-8146-002500001c4q"),
                 Date = new DateTime(2022, 12, 17,  18, 0, 0),
                 Description = "This is a test meeting 8",
                 Location = "Test location 8",
@@ -92,7 +92,7 @@ public class DbInitializer
                 Date = new DateTime(2022, 12, 19,  18, 0, 0),
                 Description = "This is a test meeting 10",
                 Location = "Test location 10",
-                Language = "English",
+                Language = "Swedish",
             }
         );
     }
