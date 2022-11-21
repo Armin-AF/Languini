@@ -94,4 +94,28 @@ public static class Extensions
             Location = meeting.Location,
         };
     }
+    
+    public static void UpdateModel(this MeetingViewModel? meeting, Meeting? model)
+    {
+        if (meeting == null || model == null) return;
+
+        model.Date = meeting.Date;
+        model.Description = meeting.Description;
+        model.Language = meeting.Language;
+        model.Location = meeting.Location;
+    }
+    
+    public static MeetingViewModel ToViewModel(this Meeting? meeting, User? user)
+    {
+        if (meeting == null)
+            return null!;
+        
+        return new MeetingViewModel
+        {
+            Date = meeting.Date,
+            Description = meeting.Description,
+            Language = meeting.Language,
+            Location = meeting.Location,
+        };
+    }
 }
