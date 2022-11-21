@@ -7,13 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddControllers().AddJsonOptions(x =>
     x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionStrings:DevConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -21,6 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IMeetingService, MeetingService>();
 
 var app = builder.Build();
 

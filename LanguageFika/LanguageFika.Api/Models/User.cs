@@ -22,14 +22,15 @@ public class User
     
     public string? LanguageToLearn { get; set; }
 
-    public Guid AddressId { get; set; }
-    public virtual Address? Address{ get; set; }
-    
+   public string? StreetAddress { get; set; }
+   public string? City { get; set; }
+   public string? Country { get; set; }
+   public string? PostalCode { get; set; }
+
+   
     public Guid LanguageId { get; set; }
     public virtual ICollection<Language>? Languages { get; set; }
-
-    public Guid MeetingId { get; set; }
-    public virtual ICollection<Meeting>? Meetings { get; set; }
+    
     
     
 }

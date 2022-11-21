@@ -15,15 +15,10 @@ public class AppDbContext: DbContext
     
     public DbSet<Language>? Languages { get; set; } = null!;
     public DbSet<User>? Users { get; set; } = null!;
-    public DbSet<Address>? Addresses { get; set; } = null!;
     public DbSet<Meeting>? Meetings { get; set; } = null!;
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Language>().ToTable("Language");
-        modelBuilder.Entity<User>().ToTable("User");
-        modelBuilder.Entity<Address>().ToTable("Address");
-        modelBuilder.Entity<Meeting>().ToTable("Meeting");
     }
 
 }
