@@ -49,11 +49,10 @@ public static class Extensions
         };
     }
     
-    public static User UpdateModel(this UserViewModel? user, User? model)
+    public static void UpdateModel(this UserViewModel? user, User? model)
     {
-        if (user == null || model == null)
-            return null!;
-        
+        if (user == null || model == null) return;
+
         model.FirstName = user.FirstName!;
         model.LastName = user.LastName!;
         model.PhoneNumber = user.PhoneNumber!;
@@ -66,31 +65,8 @@ public static class Extensions
         model.City = user.City;
         model.Country = user.Country;
         model.PostalCode = user.PostalCode;
-        
-        return model;
     }
-    
-    public static User DeleteModel(this User? model)
-    {
-        if (model == null)
-            return null!;
-        
-        model.FirstName = null;
-        model.LastName = null;
-        model.PhoneNumber = null;
-        model.BirthDate = null;
-        model.Email = null;
-        model.Description = null;
-        model.LanguageToLearn = 0;
-        model.LanguageToTeach = 0;
-        model.StreetAddress = null;
-        model.City = null;
-        model.Country = null;
-        model.PostalCode = null;
-        
-        return model;
-    }
-    
+
     public static MeetingViewModel ToViewModel(this Meeting? meeting)
     {
         if (meeting == null)

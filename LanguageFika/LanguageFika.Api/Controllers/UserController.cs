@@ -26,7 +26,6 @@ public class UserController : ControllerBase
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> Get(Guid id){
         var user = await _userService.GetById(id);
-        if(user == null) return NotFound();
         return Ok(user.ToViewModel());
     }
     
@@ -40,7 +39,6 @@ public class UserController : ControllerBase
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Put(Guid id, [FromBody] UserViewModel userViewModel){
         var user = await _userService.GetById(id);
-        if(user == null) return NotFound();
         userViewModel.UpdateModel(user);
         await _userService.Upsert(user);
         return NoContent();
@@ -49,7 +47,6 @@ public class UserController : ControllerBase
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Delete(Guid id){
         var user = await _userService.GetById(id);
-        if(user == null) return NotFound();
         await _userService.Delete(id);
         return NoContent();
     }
