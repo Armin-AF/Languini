@@ -41,9 +41,9 @@ public class UserController : ControllerBase
     }
     
     [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Put([FromBody] UserViewModel userDto){
+    public async Task<IActionResult> Put(Guid id, [FromBody] UserViewModel userDto){
         var user = _mapper.Map<User>(userDto);
-        await _userService.UpdateUserAsync(user);
+        await _userService.UpdateUserAsync(id, user);
         return Ok();
     }
     

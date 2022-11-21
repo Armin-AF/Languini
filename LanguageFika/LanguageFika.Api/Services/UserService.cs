@@ -28,10 +28,14 @@ public class UserService: IUserService
         return Task.FromResult(user);
     }
 
-    public Task<User> UpdateUserAsync(User user){
-        _dbContext.Users!.Update(user);
+    public Task<User> UpdateUserAsync(Guid userId ,User user){
+        var userToUpdate = _dbContext.Users!.FirstOrDefault(x => x.UserId == userId);
+        if (userToUpdate == null) return Task.FromResult(userToUpdate)!;
+        userToUpdate.FirstName = user.FirstName;
+        userToUpdate.LastName = user.LastName;
+        userToUpdate.Email = user.Email;
         _dbContext.SaveChanges();
-        return Task.FromResult(user);
+        return Task.FromResult(userToUpdate);
     }
 
     public Task DeleteUserAsync(Guid id){
