@@ -7,7 +7,7 @@ namespace LanguageFika.Api.Services;
 public class UserService : GenericRepository<User>, IUserService
 {
     
-    public UserService(AppDbContext context, ILogger logger) : base(context, logger)
+    public UserService(AppDbContext context) : base(context)
     {
     }
 
@@ -16,7 +16,6 @@ public class UserService : GenericRepository<User>, IUserService
             return await dbSet.ToListAsync();
         }
         catch(Exception ex){
-            _logger.LogError(ex, "Error in UserService.All");
             return new List<User>();
         }
     }
@@ -38,7 +37,6 @@ public class UserService : GenericRepository<User>, IUserService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "{Repo} Upsert function error", typeof(UserService));
             return false;
         }
     }
@@ -57,7 +55,6 @@ public class UserService : GenericRepository<User>, IUserService
             return true;
         }
         catch(Exception ex){
-            _logger.LogError(ex, "Error in UserService.Delete");
             return false;
         }
     }

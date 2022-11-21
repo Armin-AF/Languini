@@ -8,13 +8,11 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 {
 
     protected AppDbContext _context;
-    public readonly ILogger _logger;
     internal DbSet<T> dbSet;
     
-    public GenericRepository(AppDbContext context, ILogger logger)
+    public GenericRepository(AppDbContext context)
     {
         _context = context;
-        _logger = logger;
         dbSet = _context.Set<T>();
     }
     

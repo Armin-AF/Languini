@@ -5,15 +5,13 @@ namespace LanguageFika.Api.Services;
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     readonly AppDbContext _context;
-    readonly ILogger _logger;
-    
+
     public IUserService Users { get; private set; }
     
-    public UnitOfWork(AppDbContext context, ILogger logger)
+    public UnitOfWork(AppDbContext context)
     {
         _context = context;
-        _logger = logger;
-        Users = new UserService(_context, _logger);
+        Users = new UserService(_context);
     }
     
     public async Task CompleteAsync()

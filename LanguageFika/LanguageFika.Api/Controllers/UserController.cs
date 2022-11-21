@@ -9,12 +9,10 @@ namespace LanguageFika.Api.Controllers;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    readonly ILogger<UserController> _logger;
     readonly IUserService _userService;
 
-    public UserController(ILogger<UserController> logger, IUserService userService)
+    public UserController(IUserService userService)
     {
-        _logger = logger;
         _userService = userService;
     }
     
