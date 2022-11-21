@@ -4,6 +4,7 @@ using LanguageFika.Api.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanguageFika.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221121092027_AddsSeed")]
+    partial class AddsSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +23,31 @@ namespace LanguageFika.Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("LanguageFika.Api.Models.Language", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Level")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("UserId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Languages");
+                });
 
             modelBuilder.Entity("LanguageFika.Api.Models.Meeting", b =>
                 {
@@ -34,8 +61,8 @@ namespace LanguageFika.Api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Language")
-                        .HasColumnType("int");
+                    b.Property<string>("Language")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -47,82 +74,82 @@ namespace LanguageFika.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("299e8f29-e1f1-4cfd-8475-1e44493a0c0d"),
+                            Id = new Guid("00cd26f6-b36f-486b-adb1-76352e2ff967"),
                             Date = new DateTime(2022, 12, 10, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 1",
-                            Language = 17,
+                            Language = "French",
                             Location = "Test location 1"
                         },
                         new
                         {
-                            Id = new Guid("6f34521b-5786-4c2a-a90a-a12ae87e03d7"),
+                            Id = new Guid("f6f7ffec-ccbf-4b31-8628-5d80ef35d146"),
                             Date = new DateTime(2022, 12, 11, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 2",
-                            Language = 9,
+                            Language = "English",
                             Location = "Test location 2"
                         },
                         new
                         {
-                            Id = new Guid("566d4a6f-1909-4cd3-81d4-8f6579db94a0"),
+                            Id = new Guid("8efced14-3279-497b-92cd-4110eb0dae02"),
                             Date = new DateTime(2022, 12, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 3",
-                            Language = 8,
+                            Language = "Spanish",
                             Location = "Test location 3"
                         },
                         new
                         {
-                            Id = new Guid("be4aa1c3-afb9-44a8-99d5-6686b8233038"),
+                            Id = new Guid("e14a578d-025d-41e2-ad08-7b87c1125b97"),
                             Date = new DateTime(2022, 12, 13, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 4",
-                            Language = 6,
+                            Language = "German",
                             Location = "Test location 4"
                         },
                         new
                         {
-                            Id = new Guid("19889ed0-30ac-4e34-aad1-254ba56239b1"),
+                            Id = new Guid("07d37f90-e9e3-4ec8-904c-4c90eabde863"),
                             Date = new DateTime(2022, 12, 14, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 5",
-                            Language = 1,
+                            Language = "French",
                             Location = "Test location 5"
                         },
                         new
                         {
-                            Id = new Guid("4ba87d23-c957-473f-8670-6f55d23d419a"),
+                            Id = new Guid("a6e3f566-a8f1-4181-9f1a-bde23bd781c9"),
                             Date = new DateTime(2022, 12, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 6",
-                            Language = 0,
+                            Language = "Swedish",
                             Location = "Test location 6"
                         },
                         new
                         {
-                            Id = new Guid("38e804c6-6785-45cb-8cc2-e518238cf431"),
+                            Id = new Guid("78e030a7-d803-4b33-a189-3c0b34111c58"),
                             Date = new DateTime(2022, 12, 16, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 7",
-                            Language = 3,
+                            Language = "Spanish",
                             Location = "Test location 7"
                         },
                         new
                         {
-                            Id = new Guid("5937bafd-9973-49c3-9273-686b7a749b1b"),
+                            Id = new Guid("8caafdcc-5e45-42fe-a75b-2876c9e2c466"),
                             Date = new DateTime(2022, 12, 17, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 8",
-                            Language = 4,
+                            Language = "German",
                             Location = "Test location 8"
                         },
                         new
                         {
-                            Id = new Guid("04448b09-9262-4704-a781-324378853849"),
+                            Id = new Guid("306cd4b1-b394-43e1-b095-dc3307a980da"),
                             Date = new DateTime(2022, 12, 18, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 9",
-                            Language = 1,
+                            Language = "French",
                             Location = "Test location 9"
                         },
                         new
                         {
-                            Id = new Guid("f72ccafa-addb-4619-af98-d822d0a13cfa"),
+                            Id = new Guid("18be087a-9f14-47ca-9867-cdae7f9c0e5c"),
                             Date = new DateTime(2022, 12, 19, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 10",
-                            Language = 20,
+                            Language = "Swedish",
                             Location = "Test location 10"
                         });
                 });
@@ -151,11 +178,11 @@ namespace LanguageFika.Api.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LanguageToLearn")
-                        .HasColumnType("int");
+                    b.Property<Guid>("LanguageId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("LanguageToTeach")
-                        .HasColumnType("int");
+                    b.Property<string>("LanguageToLearn")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
@@ -175,6 +202,20 @@ namespace LanguageFika.Api.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("LanguageFika.Api.Models.Language", b =>
+                {
+                    b.HasOne("LanguageFika.Api.Models.User", "User")
+                        .WithMany("Languages")
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LanguageFika.Api.Models.User", b =>
+                {
+                    b.Navigation("Languages");
                 });
 #pragma warning restore 612, 618
         }

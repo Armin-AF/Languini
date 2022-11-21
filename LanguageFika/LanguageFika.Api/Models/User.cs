@@ -20,17 +20,11 @@ public class User
     public string? ProfilePicture { get; set; }
     public string? Description { get; set; }
     
-    public string? LanguageToLearn { get; set; }
+    public Language LanguageToLearn { get; set; }
+    public Language LanguageToTeach { get; set; }
 
    public string? StreetAddress { get; set; }
    public string? City { get; set; }
    public string? Country { get; set; }
    public string? PostalCode { get; set; }
-
-   
-    public Guid LanguageId { get; set; }
-    public virtual ICollection<Language>? Languages { get; set; }
-    
-    
-    
 }

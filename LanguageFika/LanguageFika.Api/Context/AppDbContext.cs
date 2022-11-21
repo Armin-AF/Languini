@@ -13,12 +13,15 @@ public class AppDbContext: DbContext
         
     }
     
-    public DbSet<Language>? Languages { get; set; } = null!;
-    public DbSet<User>? Users { get; set; } = null!;
-    public DbSet<Meeting>? Meetings { get; set; } = null!;
-    
+    public virtual DbSet<User>? Users { get; set; } = null!;
+    public virtual DbSet<Meeting>? Meetings { get; set; } = null!;
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
+        base.OnModelCreating(modelBuilder);
+
+        new DbInitializer(modelBuilder).Seed();
     }
 
 }

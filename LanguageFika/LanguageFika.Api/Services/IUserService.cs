@@ -2,12 +2,7 @@ using LanguageFika.Api.Models;
 
 namespace LanguageFika.Api.Services;
 
-public interface IUserService
+public interface IUserService : IGenericRepository<User>
 {
-    Task<User> GetUsersAsync();
-    Task<User> GetUserAsync(Guid id);
     
-    Task<User> CreateUserAsync(User user);
-    Task<User> UpdateUserAsync(Guid userId, User user);
-    Task DeleteUserAsync(Guid id);
 }

@@ -4,44 +4,63 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LanguageFika.Api.Services;
 
-public class UserService: IUserService
+public class UserService : GenericRepository<User>, IUserService
 {
-
-    readonly AppDbContext _dbContext;
     
-    public UserService(AppDbContext dbContext)
+    public UserService(AppDbContext context, ILogger logger) : base(context, logger)
     {
-        _dbContext = dbContext;
+    }
+
+    public override async Task<IEnumerable<User>> All(){
+        try{
+            return await dbSet.ToListAsync();
+        }
+        catch(Exception ex){
+            _logger.LogError(ex, "Error in UserService.All");
+            return new List<User>();
+        }
     }
     
-    public Task<User> GetUsersAsync(){
-        return _dbContext.Users!.FirstOrDefaultAsync()!;
+    public override async Task<bool> Upsert(User entity){
+        try
+        {
+            var existingUser = await dbSet.Where(x => x.UserId == entity.UserId)
+                .FirstOrDefaultAsync();
+
+            if (existingUser == null)
+                return await Add(entity);
+
+            existingUser.FirstName = entity.FirstName;
+            existingUser.LastName = entity.LastName;
+            existingUser.Email = entity.Email;
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "{Repo} Upsert function error", typeof(UserService));
+            return false;
+        }
+    }
+    
+    public override async Task<bool> Delete(Guid id){
+        try{
+            var user = await dbSet.Where(x => x.UserId == id)
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+                return false;
+
+            dbSet.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+        catch(Exception ex){
+            _logger.LogError(ex, "Error in UserService.Delete");
+            return false;
+        }
     }
 
-    public Task<User> GetUserAsync(Guid id){
-        return _dbContext.Users!.FirstOrDefaultAsync(x => x.UserId == id)!;
-    }
-
-    public Task<User> CreateUserAsync(User user){
-        _dbContext.Users!.Add(user);
-        _dbContext.SaveChanges();
-        return Task.FromResult(user);
-    }
-
-    public Task<User> UpdateUserAsync(Guid userId ,User user){
-        var userToUpdate = _dbContext.Users!.FirstOrDefault(x => x.UserId == userId);
-        if (userToUpdate == null) return Task.FromResult(userToUpdate)!;
-        userToUpdate.FirstName = user.FirstName;
-        userToUpdate.LastName = user.LastName;
-        userToUpdate.Email = user.Email;
-        _dbContext.SaveChanges();
-        return Task.FromResult(userToUpdate);
-    }
-
-    public Task DeleteUserAsync(Guid id){
-        var user = _dbContext.Users!.FirstOrDefault(x => x.UserId == id);
-        _dbContext.Users!.Remove(user!);
-        _dbContext.SaveChanges();
-        return Task.CompletedTask;
-    }
 }
+

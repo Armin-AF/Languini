@@ -4,6 +4,7 @@ using LanguageFika.Api.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanguageFika.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221121094518_UpdateEnumLang")]
+    partial class UpdateEnumLang
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,8 +36,8 @@ namespace LanguageFika.Api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Language")
-                        .HasColumnType("int");
+                    b.Property<string>("Language")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -47,82 +49,82 @@ namespace LanguageFika.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("299e8f29-e1f1-4cfd-8475-1e44493a0c0d"),
+                            Id = new Guid("a75c1432-f22a-4990-879f-7ef968486254"),
                             Date = new DateTime(2022, 12, 10, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 1",
-                            Language = 17,
+                            Language = "French",
                             Location = "Test location 1"
                         },
                         new
                         {
-                            Id = new Guid("6f34521b-5786-4c2a-a90a-a12ae87e03d7"),
+                            Id = new Guid("f7be2ae2-77cd-48d0-9a96-df90d3e26e94"),
                             Date = new DateTime(2022, 12, 11, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 2",
-                            Language = 9,
+                            Language = "English",
                             Location = "Test location 2"
                         },
                         new
                         {
-                            Id = new Guid("566d4a6f-1909-4cd3-81d4-8f6579db94a0"),
+                            Id = new Guid("c5881095-0295-4813-a923-905fab0c26cf"),
                             Date = new DateTime(2022, 12, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 3",
-                            Language = 8,
+                            Language = "Spanish",
                             Location = "Test location 3"
                         },
                         new
                         {
-                            Id = new Guid("be4aa1c3-afb9-44a8-99d5-6686b8233038"),
+                            Id = new Guid("50d1339c-0a1b-4c26-a2b2-9e3d8a990021"),
                             Date = new DateTime(2022, 12, 13, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 4",
-                            Language = 6,
+                            Language = "German",
                             Location = "Test location 4"
                         },
                         new
                         {
-                            Id = new Guid("19889ed0-30ac-4e34-aad1-254ba56239b1"),
+                            Id = new Guid("d3844a3c-c218-4972-ab77-fe8e3a80b567"),
                             Date = new DateTime(2022, 12, 14, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 5",
-                            Language = 1,
+                            Language = "French",
                             Location = "Test location 5"
                         },
                         new
                         {
-                            Id = new Guid("4ba87d23-c957-473f-8670-6f55d23d419a"),
+                            Id = new Guid("917352e4-7d5f-45af-b93f-8a31bed036c4"),
                             Date = new DateTime(2022, 12, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 6",
-                            Language = 0,
+                            Language = "Swedish",
                             Location = "Test location 6"
                         },
                         new
                         {
-                            Id = new Guid("38e804c6-6785-45cb-8cc2-e518238cf431"),
+                            Id = new Guid("bb9dc6ef-0a81-4281-9b52-d78e2979ed01"),
                             Date = new DateTime(2022, 12, 16, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 7",
-                            Language = 3,
+                            Language = "Spanish",
                             Location = "Test location 7"
                         },
                         new
                         {
-                            Id = new Guid("5937bafd-9973-49c3-9273-686b7a749b1b"),
+                            Id = new Guid("31d24f06-3327-4836-884e-143be5a1e41a"),
                             Date = new DateTime(2022, 12, 17, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 8",
-                            Language = 4,
+                            Language = "German",
                             Location = "Test location 8"
                         },
                         new
                         {
-                            Id = new Guid("04448b09-9262-4704-a781-324378853849"),
+                            Id = new Guid("9b4744dd-935e-4f82-a541-e9ab86e634ce"),
                             Date = new DateTime(2022, 12, 18, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 9",
-                            Language = 1,
+                            Language = "French",
                             Location = "Test location 9"
                         },
                         new
                         {
-                            Id = new Guid("f72ccafa-addb-4619-af98-d822d0a13cfa"),
+                            Id = new Guid("5ece7df9-62c2-4949-8ffe-a55aba1a7332"),
                             Date = new DateTime(2022, 12, 19, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 10",
-                            Language = 20,
+                            Language = "Swedish",
                             Location = "Test location 10"
                         });
                 });
