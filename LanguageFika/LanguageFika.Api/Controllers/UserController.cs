@@ -22,5 +22,35 @@ public class UserController : ControllerBase
         var userViewModels = users.Select(u => u.ToViewModel());
         return Ok(userViewModels);
     }
-
+    
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> Get(Guid id){
+        var user = await _userService.GetById(id);
+        if(user == null) return NotFound();
+        return Ok(user.ToViewModel());
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] UserViewModel userViewModel){
+        var user = userViewModel.ToModel();
+        await _userService.Add(user);
+        return CreatedAtAction(nameof(Get), new { id = user.UserId }, user.ToViewModel());
+    }
+    
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> Put(Guid id, [FromBody] UserViewModel userViewModel){
+        var user = await _userService.GetById(id);
+        if(user == null) return NotFound();
+        userViewModel.UpdateModel(user);
+        await _userService.Upsert(user);
+        return NoContent();
+    }
+    
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(Guid id){
+        var user = await _userService.GetById(id);
+        if(user == null) return NotFound();
+        await _userService.Delete(id);
+        return NoContent();
+    }
 }
