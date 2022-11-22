@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
 import { Landing } from "./pages/Landing";
-import { Register } from "./components/Register";
 
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
@@ -15,7 +14,6 @@ function App() {
       {
         <>
         <Landing />
-        <Events />
         </>
       }
     </div>
