@@ -13,7 +13,7 @@ const CardComponent = (props) => {
                     Language
                 </h4>
                 <p className="mb-2 leading-normal">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    {props.language}
                 </p>
                 <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
                     Join
