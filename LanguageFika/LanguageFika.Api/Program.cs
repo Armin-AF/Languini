@@ -1,7 +1,10 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using LanguageFika.Api.Context;
+using LanguageFika.Api.Security;
 using LanguageFika.Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,25 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = builder.Configuration["Auth0:Domain"];
+        options.Audience = builder.Configuration["Auth0:Audience"];
+    });
+
+builder.Services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(
+        "read:messages",
+        policy => policy.Requirements.Add(
+            new HasScopeRequirement("read:messages",
+                builder.Configuration["Auth0:Domain"]!)) );
+});
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IMeetingService, MeetingService>();
@@ -41,6 +63,7 @@ app.UseCors(x => x
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
