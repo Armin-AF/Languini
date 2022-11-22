@@ -36,3 +36,5 @@ const SearchBar = ({ posts, setSearchResults }) => {
     )
 }
 
+export default SearchBar
+
