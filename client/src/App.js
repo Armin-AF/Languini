@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
-import { Login } from "./components/Login";
+import { Landing } from "./pages/Landing";
 import { Register } from "./components/Register";
 
 function App() {
@@ -13,7 +13,8 @@ function App() {
   return (
     <div className="App">
       {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
+        <Landing />
+        // currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
       }
     </div>
   );

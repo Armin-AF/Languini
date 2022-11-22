@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import loginImg from "../assets/learning1.jpg";
 
-export const Login = (props) => {
+export const Landing = (props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
