@@ -19,14 +19,12 @@ export const Login = (props) => {
           alt="people learning"
         />
       </div>
-
       <div className="bg-gray-100 flex flex-col justify-center">
         <form
           className="max-w-[400px] w-full mx-auto bg-white p-4 rounded-3xl"
           onSubmit={handleSubmit}
         >
           <h1 className="text-4xl font-semibold text-center py-6">App Name</h1>
-          <p></p>
           <div className="flex flex-col py-2">
             <label className="font-semibold">Email</label>
             <input
