@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import LogOut from "../components/LogOut";
 import CardComponent from "../components/CardComponent";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
@@ -66,7 +65,6 @@ const UserProfile = () => {
                     </div>
                 ))}</p>
 
-                <LogOut />
                 <Footer />
 
             </div>

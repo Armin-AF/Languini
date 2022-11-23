@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import LingoFikaIcon from '../assets/LingoFikaIcon.png'
 import { FaBars, FaMinus } from 'react-icons/fa';
+import LogOut from "./LogOut";
 
 
 const navigation = [
@@ -115,7 +116,7 @@ export default function Navbar() {
                                                         href="#"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
-                                                        Sign out
+                                                        <LogOut />
                                                     </a>
                                                 )}
                                             </Menu.Item>
