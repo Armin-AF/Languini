@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import './App.css';
-import { Landing } from "./pages/Landing";
+import AccessComponent from "./components/AccessComponent";
+import UserProfile from "./pages/UserProfile";
+import {useAuth0} from "@auth0/auth0-react";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
-
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  }
+  const { isAuthenticated } = useAuth0();
 
   return (
-    <div className="App">
-      {
-        <>
-        <Landing />
-        </>
-      }
-    </div>
+      <div className="App">
+        {!isAuthenticated ? (
+                <div>
+                  <AccessComponent />
+                </div>
+            ) :
+            <div>
+
+              <UserProfile />
+            </div>}
+      </div>
   );
 }
 
