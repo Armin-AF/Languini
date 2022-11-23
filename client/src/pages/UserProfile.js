@@ -4,6 +4,7 @@ import LogOut from "../components/LogOut";
 import CardComponent from "../components/CardComponent";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
+import SearchBar from "../components/Search";
 
 const UserProfile = () => {
     const { user, isAuthenticated,getAccessTokenSilently, isLoading } = useAuth0();
@@ -58,6 +59,7 @@ const UserProfile = () => {
                 <Navbar />
                 <h1 className={"font-medium leading-tight text-8xl mt-0 mb-2 text-blue-900"}>LingoFika</h1>
                 <h3 className={"font-medium text-2xl"}>Find Events</h3>
+                <SearchBar />
                 <p>{posts.map((post) => (
                     <div>
                         <CardComponent language={post.language} location={post.location} date={post.date}/>

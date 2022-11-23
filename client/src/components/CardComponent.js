@@ -2,9 +2,9 @@ import React from "react";
 
 const CardComponent = (props) => {
     return (
-        <div className="w-full p-2 rounded-lg shadow-xl lg:flex lg:max-w-lg">
+        <div className="w-full p-2 rounded-lg shadow-xl ">
             <img
-                className="object-cover w-full lg:w-40 lg:h-40"
+                className="object-cover w-full mx-auto max-w-md rounded-lg"
                 src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go"
                 alt="image"
             />
