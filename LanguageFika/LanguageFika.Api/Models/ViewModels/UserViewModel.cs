@@ -1,3 +1,5 @@
+using Microsoft.OpenApi.Extensions;
+
 namespace LanguageFika.Api.Models.ViewModels;
 
 public class UserViewModel
@@ -16,7 +18,12 @@ public class UserViewModel
     
 
     public Language LearningLanguage{ get; set; }
-    
+
     public Language TeachingLanguage{ get; set; }
+
+
+    public string EnumToStringConverter(Language language){
+        return language.GetDisplayName();
+    }
 
 }

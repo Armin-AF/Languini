@@ -33,7 +33,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPost]
-    [Authorize]
+    [Authorize("create:user")]
     public async Task<IActionResult> Post([FromBody] UserViewModel userViewModel){
         var user = userViewModel.ToModel();
         await _userService.Users.Add(user);
