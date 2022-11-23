@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import loginImg from "../assets/learning1.jpg";
+import accessComponent from "../components/AccessComponent";
 
 export const Landing = (props) => {
   const [email, setEmail] = useState("");
@@ -24,20 +25,8 @@ export const Landing = (props) => {
           className="max-w-[400px] w-full mx-auto bg-white p-4 rounded-3xl"
           onSubmit={handleSubmit}
         >
-          <h1 className="text-4xl font-semibold text-center py-6">Introducing App Name</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique in justo vel scelerisque. Aenean sed laoreet ante, in volutpat.</p>
-          <button
-            className="border w-full my-3 py-3 bg-violet-500 hover:bg-violet-400 text-white rounded-2xl font-semibold active:scale-[0.95] active:duration-75 transition-all"
-            type="submit"
-          >
-            Log in
-          </button>
-          <button
-            className="border w-full my-3 py-3 bg-violet-500 hover:bg-violet-400 text-white rounded-2xl font-semibold active:scale-[0.95] active:duration-75 transition-all"
-            type="submit"
-          >
-            Sign up
-          </button>
+          <h1 className="text-6xl font-semibold text-center py-8">Introducing LINDER</h1>
+          <p>"Learn a second language" and find new friends 🍆💦</p>
         </form>
       </div>
     </div>
