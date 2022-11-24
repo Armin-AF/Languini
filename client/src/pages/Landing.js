@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import loginImg from "../assets/learning1.jpg";
-import accessComponent from "../components/AccessComponent";
+import AccessComponent from "../components/AccessComponent";
 
 export const Landing = (props) => {
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +27,7 @@ export const Landing = (props) => {
           <h1 className="text-6xl font-semibold text-center py-8">Introducing LINDER</h1>
           <p>"Learn a second language" and find new friends 🍆💦</p>
         </form>
+          <AccessComponent />
       </div>
     </div>
   );
