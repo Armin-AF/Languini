@@ -3,7 +3,7 @@ import LogOut from "./LogOut";
 
 const NavigationBar = () => {
     return (
-        <nav className='flex justify-end gap-5 mr-5'>
+        <nav>
             <NavLink to="/events">Events</NavLink>
             <NavLink to="/profile">Profile</NavLink>
             <NavLink to="/about">About</NavLink>

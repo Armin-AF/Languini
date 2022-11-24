@@ -26,8 +26,8 @@ export const Landing = (props) => {
         >
           <h1 className="text-6xl font-semibold text-center py-8">Introducing LINDER</h1>
           <p>"Learn a second language" and find new friends 🍆💦</p>
-          <AccessComponent />
         </form>
+          <AccessComponent />
       </div>
     </div>
   );
