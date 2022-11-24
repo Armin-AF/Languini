@@ -16,11 +16,10 @@ const UserProfile = () => {
             try {
                 const accessToken = await getAccessTokenSilently({
                     audience: `https://lingofikaapi.azurewebsites.net`,
-                    scope: "read:messages",
                 });
                 console.log(accessToken + "accessToken")
 
-                const userDetailsByIdUrl = `https://lingofikaapi.azurewebsites.net/api/User/private-scoped`;
+                const userDetailsByIdUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
 
                 const metadataResponse = await fetch(userDetailsByIdUrl, {
                     headers: {
@@ -28,9 +27,11 @@ const UserProfile = () => {
                     },
                 });
 
-                const { user_metadata } = await metadataResponse.json();
-
-                setUserMetadata(user_metadata);
+                const { user_metadata } = await metadataResponse.json().then(j => {
+                    console.log(j)
+                    setUserMetadata(j)
+                });
+                console.log(user_metadata)
             } catch (e) {
                 console.log(e.message);
             }
@@ -52,6 +53,9 @@ const UserProfile = () => {
         return <div>Loading ...</div>;
     }
 
+    const usersApi = JSON.stringify(userMetadata)
+    console.log(usersApi)
+
     return (
         isAuthenticated && (
             <div>
@@ -59,11 +63,11 @@ const UserProfile = () => {
                 <h1 className={"font-medium leading-tight text-8xl mt-0 mb-2 text-blue-900"}>LingoFika</h1>
                 <h3 className={"font-medium text-2xl"}>Find Events</h3>
                 <SearchBar />
-                <p>{posts.map((post) => (
-                    <div>
+                <div>{posts.map((post) => (
+                    <div key={post.date}>
                         <CardComponent language={post.language} location={post.location} date={post.date}/>
                     </div>
-                ))}</p>
+                ))}</div>
 
                 <Footer />
 
