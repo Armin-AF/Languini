@@ -22,8 +22,6 @@ const SearchBar = ({ posts, setSearchResults }) => {
             <form onSubmit={handleSubmit}>
                 <input className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none mt-5"
                     type="search" name="search" placeholder="Enter language" value={searchTerm} onChange={handleSearchChange} />
-                <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-                </button>
             </form>
         </div>
     )
