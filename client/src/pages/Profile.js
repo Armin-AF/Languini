@@ -52,6 +52,7 @@ const Profile = () => {
                 <div>Email: {user.email}</div>
                 <div>Username: {user.nickname}</div>
                 <div>Language: {user.locale}</div>
+
             </div>
             <Footer />
             </>

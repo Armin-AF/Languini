@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
 import SearchBar from "../components/Search";
 import CardList from "../components/CardList";
