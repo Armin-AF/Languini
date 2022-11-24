@@ -44,15 +44,12 @@ const Profile = () => {
     return (
         isAuthenticated && (
             <div>
-                <h1 className={"font-medium leading-tight text-8xl mt-0 mb-2 text-blue-900"}>LingoFika</h1>
-                <h3 className={"font-medium text-2xl"}>Profile</h3>
-                <div className={"font-medium text-2xl"}>{userMetadata}</div>
-                <div>First Name: {user.given_name}</div>
-                <div>Family Name: {user.family_name}</div>
-                <div>Email: {user.email}</div>
-                <div>NickName: {user.nickname}</div>
-                <div>Language: {user.locale}</div>
-                <div><img src={user.picture} alt="Profile" /></div>
+                <div className={"font-medium text-2xl"}>First Name: {user.given_name}</div>
+                <div className={"font-medium text-2xl"}>Family Name: {user.family_name}</div>
+                <div className={"font-medium text-2xl"}>Email: {user.email}</div>
+                <div className={"font-medium text-2xl"}>Username: {user.nickname}</div>
+                <div className={"font-medium text-2xl"}>Language: {user.locale}</div>
+                <div className={"flex flex-wrap justify-center"}><img className={"max-w-full h-auto rounded-lg"} src={user.picture} alt="Profile" /></div>
 
                 <Footer />
             </div>
