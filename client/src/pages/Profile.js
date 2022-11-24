@@ -49,7 +49,7 @@ const Profile = () => {
                 <div className={"font-medium text-2xl"}>Email: {user.email}</div>
                 <div className={"font-medium text-2xl"}>Username: {user.nickname}</div>
                 <div className={"font-medium text-2xl"}>Language: {user.locale}</div>
-                <div className={"flex flex-wrap justify-center"}><img className={"max-w-full h-auto rounded-full"} src={user.picture} alt="Profile" /></div>
+                <div className={"flex flex-wrap justify-center"}><img className={"max-w-full h-auto rounded-full shadow-lg"} src={user.picture} alt="Profile" /></div>
 
                 <Footer />
             </div>

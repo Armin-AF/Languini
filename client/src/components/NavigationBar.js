@@ -7,6 +7,7 @@ const NavigationBar = () => {
             <NavLink to="/events">Events</NavLink>
             <NavLink to="/profile">Profile</NavLink>
             <NavLink to="/about">About</NavLink>
+            <NavLink to="/create_event">Create Event</NavLink>
             <LogOut />
         </nav>
     );

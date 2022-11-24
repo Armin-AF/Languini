@@ -7,6 +7,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import NavigationBar from "./components/NavigationBar";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
+import CreateEvent from "./pages/CreateEvent";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/events" element={<Events />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/create_event" element={<CreateEvent />} />
                 </Routes>
             </div>}
       </div>
