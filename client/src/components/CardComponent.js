@@ -15,6 +15,9 @@ const CardComponent = (props) => {
                 <p className="mb-2 leading-normal">
                     {props.location}
                 </p>
+                <p className="mb-2 leading-normal">
+                    {props.date}
+                </p>
                 <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
                     Join
                 </button>

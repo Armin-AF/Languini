@@ -4,10 +4,10 @@ namespace LanguageFika.Api.Models.ViewModels;
 
 public class UserViewModel
 {
-    public string FirstName{ get; set; }
-    public string LastName{ get; set; }
-    public string Email{ get; set; }
-    public string PhoneNumber{ get; set; }
+    public string? FirstName{ get; set; }
+    public string? LastName{ get; set; }
+    public string? Email{ get; set; }
+    public string? PhoneNumber{ get; set; }
     
     public string? StreetAddress { get; set; }
     public string? City { get; set; }
@@ -17,9 +17,9 @@ public class UserViewModel
     public DateTime? BirthDate { get; set; }
     
 
-    public Language LearningLanguage{ get; set; }
+    public string? LearningLanguage{ get; set; }
 
-    public Language TeachingLanguage{ get; set; }
+    public string? TeachingLanguage{ get; set; }
 
 
     public string EnumToStringConverter(Language language){

@@ -20,8 +20,8 @@ public class User
     public string? ProfilePicture { get; set; }
     public string? Description { get; set; }
     
-    public Language LanguageToLearn { get; set; }
-    public Language LanguageToTeach { get; set; }
+    public string LanguageToLearn { get; set; }
+    public string LanguageToTeach { get; set; }
 
    public string? StreetAddress { get; set; }
    public string? City { get; set; }

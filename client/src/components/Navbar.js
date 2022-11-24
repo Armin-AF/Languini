@@ -9,7 +9,6 @@ const navigation = [
     { name: 'Browse Events', href: '#', current: true },
     { name: 'Your Profile', href: '#', current: false },
     { name: 'About Us', href: '#', current: false },
-    { name: 'Sign in/out', href: '#', current: false },
 ]
 
 function classNames(...classes) {
