@@ -31,13 +31,14 @@ const CreateEvent = () => {
 
 
     return (
-        <>
-            <input ref={inputDate} type="datetime-local" />
-            <input ref={inputDescription} type="text" />
-            <input ref={inputLocation} type="text" />
-            <input ref={inputLanguage} type="text" />
-            <button onClick={onButtonClick}>Submit</button>
-        </>
+        <div className="grid gap-6 mb-6 grid-cols-1 mt-20">
+            <h1 className={"justify-center"}> Create a new event ☕️</h1>
+            <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/2" ref={inputDate} type="datetime-local"/>
+            <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/2" ref={inputDescription} type="text" placeholder="Description"/>
+            <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/2" ref={inputLocation} type="text" placeholder="Location"/>
+            <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/2" ref={inputLanguage} type="text" placeholder="Language"/>
+            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 inline-flex items-center w-1/2 justify-center rounded-lg" onClick={onButtonClick}>Submit</button>
+        </div>
     );
 }
 
