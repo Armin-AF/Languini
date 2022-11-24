@@ -59,8 +59,8 @@ const Events = () => {
     return (
         isAuthenticated && (
             <div>
-                <h1 className={"font-medium leading-tight text-8xl mt-0 mb-2 text-blue-900"}>LingoFika</h1>
-                <h3 className={"font-medium text-2xl"}>Find Events</h3>
+                <h1 className="font-medium leading-tight text-8xl mt-0 mb-2 text-blue-900 mt-10">LingoFika</h1>
+                <h3 className="font-medium text-2xl mt-10">Find Events</h3>
                 <SearchBar posts={posts} setSearchResults={setSearchResults} />
                 <CardList searchResults={searchResults} />
                 <Footer />
