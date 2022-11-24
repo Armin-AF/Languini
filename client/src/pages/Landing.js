@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import loginImg from "../assets/learning1.jpg";
+import brandImg from "../assets/BrandName_Logo_TagLine_1000_Transparency.png";
 import AccessComponent from "../components/AccessComponent";
 
 export const Landing = (props) => {
@@ -24,8 +25,9 @@ export const Landing = (props) => {
           className="max-w-[400px] w-full mx-auto bg-white p-4 rounded-3xl"
           onSubmit={handleSubmit}
         >
-          <h1 className="text-6xl font-semibold text-center py-8">Introducing LINDER</h1>
-          <p>"Learn a second language" and find new friends 🍆💦</p>
+          <img
+            src={brandImg}
+          />
           <AccessComponent />
         </form>
       </div>
