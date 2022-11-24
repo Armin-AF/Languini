@@ -12,7 +12,7 @@ const SearchBar = ({ posts, setSearchResults }) => {
 
         if (!e.target.value) return setSearchResults(posts)
 
-        const resultsArray = posts.filter(post => post.name.toLowerCase().includes(e.target.value.toLowerCase()))
+        const resultsArray = posts.filter(post => post.language.toLowerCase().includes(e.target.value.toLowerCase()))
 
         setSearchResults(resultsArray)
     }

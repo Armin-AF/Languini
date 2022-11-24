@@ -4,11 +4,13 @@ import CardComponent from "../components/CardComponent";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
 import SearchBar from "../components/Search";
+import CardList from "../components/CardList";
 
 const UserProfile = () => {
     const { user, isAuthenticated,getAccessTokenSilently, isLoading } = useAuth0();
     const [userMetadata, setUserMetadata] = useState(null);
     const [posts, setPosts] = useState([])
+    const [searchResults, setSearchResults] = useState([])
 
     useEffect(() => {
         const getUserMetadata = async () => {
@@ -44,9 +46,8 @@ const UserProfile = () => {
     useEffect(() => {
         fetch('https://lingofikaapi.azurewebsites.net/api/Meeting')
             .then(response => response.json())
-            .then(data => setPosts(data));
-
-    }, [])
+            .then(data => {setPosts(data)
+                setSearchResults(data)})}, [])
 
 
     if (isLoading) {
@@ -62,13 +63,8 @@ const UserProfile = () => {
                 <Navbar />
                 <h1 className={"font-medium leading-tight text-8xl mt-0 mb-2 text-blue-900"}>LingoFika</h1>
                 <h3 className={"font-medium text-2xl"}>Find Events</h3>
-                <SearchBar />
-                <div>{posts.map((post) => (
-                    <div key={post.date}>
-                        <CardComponent language={post.language} location={post.location} date={post.date}/>
-                    </div>
-                ))}</div>
-
+                <SearchBar posts={posts} setSearchResults={setSearchResults} />
+                <CardList searchResults={searchResults} />
                 <Footer />
 
             </div>
