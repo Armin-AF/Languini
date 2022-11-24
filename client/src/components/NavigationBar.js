@@ -1,5 +1,6 @@
 import {NavLink} from 'react-router-dom';
 import LogOut from "./LogOut";
+import logo from '../assets/logo_transparent_favicon.png';
 
 const NavigationBar = () => {
     return (
@@ -8,6 +9,8 @@ const NavigationBar = () => {
             <NavLink to="/profile">Profile</NavLink>
             <NavLink to="/about">About</NavLink>
             <LogOut />
+            <img className='h-10' src={logo} alt='logo'
+            />
         </nav>
     );
 };
