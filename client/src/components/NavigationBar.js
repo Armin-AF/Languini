@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import LogOut from "./LogOut";
-import logo from '../assets/logo_transparent_favicon.png';
+import logo from '../assets/BrandNameAndLogoHorisonal.png';
 import brand from '../assets/BrandName_Only.png';
 
 const NavigationBar = () => {
@@ -8,8 +8,8 @@ const NavigationBar = () => {
         <div className='bg-white shadow'>
             <div className='container mx-auto px-4'>
                 <div className='flex items-center justify-between py-4'>
-                    <div className='w-10 h-10'>
-                        <img src={logo} />
+                    <div>
+                        <img className='w-50 h-10' src={logo} />
                     </div>
                     <div className='hidden sm:flex sm:items-center'>
                         <nav>
