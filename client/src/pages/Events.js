@@ -59,6 +59,11 @@ const Events = () => {
     return (
         isAuthenticated && (
             <div>
+                <div className="flex justify-center h-20 w-76 mt-10">
+                <img 
+                src={brandname}
+                />
+                </div>
                 {/* <h1 className="font-medium leading-tight text-6xl mb-2 text-blue-900 mt-10">Languini</h1> */}
                 <h3 className="font-medium text-2xl mt-10">Find Events</h3>
                 <SearchBar posts={posts} setSearchResults={setSearchResults} />
