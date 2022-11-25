@@ -6,16 +6,22 @@ import "react-multiple-select-dropdown-lite/dist/index.css";
 const SearchBar = ({ posts, setSearchResults }) => {
 
     const [searchTerm, setSearchTerm] = useState('')
-    const [value, setvalue] = useState("");
 
     const handleSubmit = (e) => e.preventDefault()
 
-    const handleOnchange = (val) => setvalue(val);
+    const handleOnchange = (val) => {
+
+        setSearchTerm(val);
+        if (!searchTerm.target.value) return setSearchResults(posts)
+        const resultsArray = posts.filter(post => post.language.toLowerCase().includes(val.target.value.toLowerCase()))
+        setSearchResults(resultsArray)
+    }
 
     const options = [
-        { value: "language", label: "Language" },
-        { value: "location", label: "Location" },
-        { value: "date", label: "Date" },
+        { value: "all", label: "All" },
+        { value: "japanese", label: "Japanese" },
+        { value: "english", label: "English" },
+        { value: "swedish", label: "Swedish" },
     ]
 
     const handleSearchChange = (e) => {
@@ -40,6 +46,9 @@ const SearchBar = ({ posts, setSearchResults }) => {
                     onChange={handleOnchange}
                     options={options}
                 />
+            </div>
+            <div>
+                {searchTerm}
             </div>
         </div>
     )
