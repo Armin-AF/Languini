@@ -15,8 +15,6 @@ const CreateEvent = () => {
         inputDescription.current.focus();
         inputLocation.current.focus();
         inputLanguage.current.focus();
-        //inputLanguage.current.value.clear()
-
 
         const requestOptions = {
             headers: { 'Content-Type': 'application/json' },
@@ -28,14 +26,12 @@ const CreateEvent = () => {
                 language: inputLanguage.current.value
             })
         };
-        console.log(requestOptions)
+
         fetch('https://lingofikaapi.azurewebsites.net/api/Meeting', requestOptions)
             .then(response => {response.json()
-                console.log(response)}).
-        then(data => navigate('/events'));
-
+                console.log(response)})
+            .then(() => navigate('/events'));
     };
-
 
     return (
         <>
@@ -49,7 +45,6 @@ const CreateEvent = () => {
             <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 inline-flex items-center w-40 justify-center rounded-lg mb-40" onClick={onButtonClick}>Submit</button>
             <Footer />
         </>
-
     );
 }
 
