@@ -22,8 +22,6 @@ public class AppDbContext: DbContext
 
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Meeting>().HasMany(m => m.Participants);
-
         new DbInitializer(modelBuilder).Seed();
     }
 

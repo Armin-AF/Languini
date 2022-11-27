@@ -6,6 +6,8 @@ namespace LanguageFika.Api.Models;
 public class Participant
 {
     [Key]
-    public string Id { get; set; } = String.Empty;
-    
+    public string ParticipantId { get; set; } = null!;
+
+    public Guid MeetingId { get; set; }
+
 }
