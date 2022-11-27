@@ -34,6 +34,10 @@ public class MeetingController : ControllerBase
     public async Task<IActionResult> Post([FromBody] MeetingViewModel meetingViewModel)
     {
         meetingViewModel.MeetingId = Guid.NewGuid();
+        if (meetingViewModel.Date < DateTime.Now)
+        {
+            return BadRequest("Meeting date must be in the future");
+        }
         var meeting = meetingViewModel.ToModel();
         await _meetingService.Add(meeting);
         return Ok(meeting.ToViewModel());
@@ -42,6 +46,10 @@ public class MeetingController : ControllerBase
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Put(Guid id, [FromBody] MeetingViewModel meetingViewModel)
     {
+        if (meetingViewModel.Date < DateTime.Now)
+        {
+            return BadRequest("Meeting date must be in the future");
+        }
         var meeting = meetingViewModel.ToModel();
         await _meetingService.Upsert(meeting);
         return Ok(meeting.ToViewModel());
