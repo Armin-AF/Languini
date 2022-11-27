@@ -4,6 +4,7 @@ using LanguageFika.Api.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanguageFika.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127111336_UpdateMeetingModel4")]
+    partial class UpdateMeetingModel4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace LanguageFika.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("00373933-d97b-4f8d-b2c1-2b81133bfe34"),
+                            Id = new Guid("82a376fb-1743-4574-8194-9dc55c0fad79"),
                             Date = new DateTime(2022, 12, 10, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 1",
                             Language = "Finnish",
@@ -55,7 +57,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cf818dcd-082c-4ac9-8a5f-be7a3ffe16a8"),
+                            Id = new Guid("084b16cb-eb67-4eed-afd6-2527679bed4f"),
                             Date = new DateTime(2022, 12, 11, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 2",
                             Language = "Chinese",
@@ -63,7 +65,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8905383a-86c0-487d-b6b2-292cd3dcba25"),
+                            Id = new Guid("388b6723-e988-4a59-911e-1e3e41650f1b"),
                             Date = new DateTime(2022, 12, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 3",
                             Language = "Japanese",
@@ -71,7 +73,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("63956d05-ffb8-4f01-95e0-288ffda024fb"),
+                            Id = new Guid("fae39c7c-6b96-4635-87e3-69b21008d537"),
                             Date = new DateTime(2022, 12, 13, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 4",
                             Language = "Portuguese",
@@ -79,7 +81,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ea67bf50-58dd-4df0-9095-0579e47e646d"),
+                            Id = new Guid("7346f11d-50cd-43b0-9b0f-fad3095785ba"),
                             Date = new DateTime(2022, 12, 14, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 5",
                             Language = "Swedish",
@@ -87,7 +89,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("92a086ba-1518-4b02-9c3c-9fae47f77199"),
+                            Id = new Guid("34b9ea88-2b24-4700-8638-41477893cf87"),
                             Date = new DateTime(2022, 12, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 6",
                             Language = "English",
@@ -95,7 +97,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("29463ac6-8b84-41ba-a2fd-48f8ea29b89b"),
+                            Id = new Guid("1caec0ed-34e1-4f34-938b-48c784d838d8"),
                             Date = new DateTime(2022, 12, 16, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 7",
                             Language = "French",
@@ -103,7 +105,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0db9f314-4d8a-41d2-959e-3c65ba708317"),
+                            Id = new Guid("4ca9f035-7995-4714-a090-e04f3d489665"),
                             Date = new DateTime(2022, 12, 17, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 8",
                             Language = "German",
@@ -111,7 +113,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f4d78e58-b43e-401a-b1ca-4f90568c5f84"),
+                            Id = new Guid("c19fd53a-db7d-4ca3-b532-e1078f764e15"),
                             Date = new DateTime(2022, 12, 18, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 9",
                             Language = "Swedish",
@@ -119,7 +121,7 @@ namespace LanguageFika.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ee4b5c20-39b0-49e2-b76f-3a0a5d9ed52d"),
+                            Id = new Guid("3a0aac54-40b4-49ff-a2bc-cfc8a4ab403a"),
                             Date = new DateTime(2022, 12, 19, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "This is a test meeting 10",
                             Language = "Greek",

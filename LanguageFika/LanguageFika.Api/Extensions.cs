@@ -74,10 +74,12 @@ public static class Extensions
         
         return new MeetingViewModel
         {
+            Id = meeting.Id,
             Date = meeting.Date,
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
+            Participants = meeting.Participants.ToList(),
         };
     }
     
@@ -88,17 +90,20 @@ public static class Extensions
         
         return new Meeting
         {
+            Id = meeting.Id,
             Date = meeting.Date,
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
+            Participants = meeting.Participants,
         };
     }
     
     public static void UpdateModel(this MeetingViewModel? meeting, Meeting? model)
     {
         if (meeting == null || model == null) return;
-
+        
+        model.Id = meeting.Id;
         model.Date = meeting.Date;
         model.Description = meeting.Description;
         model.Language = meeting.Language;
@@ -112,10 +117,12 @@ public static class Extensions
         
         return new MeetingViewModel
         {
+            Id = meeting.Id,
             Date = meeting.Date,
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
+            Participants = meeting.Participants.ToList(),
         };
     }
 }

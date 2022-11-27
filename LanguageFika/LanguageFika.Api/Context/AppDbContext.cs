@@ -15,11 +15,14 @@ public class AppDbContext: DbContext
     
     public virtual DbSet<User>? Users { get; set; } = null!;
     public virtual DbSet<Meeting>? Meetings { get; set; } = null!;
+    public virtual DbSet<Participant>? Participants { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
+
         base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Meeting>().HasMany(m => m.Participants);
 
         new DbInitializer(modelBuilder).Seed();
     }
