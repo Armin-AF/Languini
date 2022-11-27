@@ -22,7 +22,7 @@ public class MeetingController : ControllerBase
         var meetingViewModels = meetings.Select(m => m.ToViewModel());
         return Ok(meetingViewModels);
     }
-    
+
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> Get(Guid id)
     {
@@ -33,6 +33,7 @@ public class MeetingController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] MeetingViewModel meetingViewModel)
     {
+        meetingViewModel.MeetingId = Guid.NewGuid();
         var meeting = meetingViewModel.ToModel();
         await _meetingService.Add(meeting);
         return Ok(meeting.ToViewModel());
