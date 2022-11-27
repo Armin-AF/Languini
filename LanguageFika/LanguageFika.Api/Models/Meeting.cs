@@ -12,6 +12,4 @@ public class Meeting
     public string? Description { get; set; }
     public string? Location { get; set; }
     public string? Language { get; set; }
-    
-    public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
 }
