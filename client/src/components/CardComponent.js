@@ -7,6 +7,19 @@ const CardComponent = (props) => {
     const [participants, setParticipants] = useState([]);
     const [createParticipant, setCreateParticipant] = useState(false);
 
+    useEffect(() => {
+        const getParticipants = async () => {
+            try {
+                await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant/${props.id}`)
+                    .then(response => response.json())
+                    .then(data => setParticipants(data))
+            } catch (e) {
+                console.log(e.message);
+            }
+        }
+        getParticipants().then();
+    }, [props.id])
+
     const HandleClick = async () => {
         try {
             if (!createParticipant) {
@@ -14,40 +27,18 @@ const CardComponent = (props) => {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
-                        meetingId: props.id,
-                        userId: user.sub
+                        participantEmail: user.email,
+                        meetingId: props.id
                     })
                 };
                 await fetch('https://lingofikaapi.azurewebsites.net/api/Participant', requestOptions)
                     .then(response => response.json())
                 setCreateParticipant(true)
-            } else {
-                const requestOptions = {
-                    method: 'DELETE',
-                    headers: {'Content-Type': 'application/json'},
-                };
-                await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant/${user.email}`, requestOptions)
-                    .then(response => response.json())
-                setCreateParticipant(false)
             }
         } catch (e) {
             console.log(e.message);
         }
     }
-
-    useEffect(() => {
-        const getEvent = async () => {
-            try {
-                await fetch('https://lingofikaapi.azurewebsites.net/api/Participant/' + props.id)
-                    .then(response => response.json())
-                    .then(data => setParticipants(data))
-            } catch (e) {
-                console.log(e.message);
-            }
-            console.log((props.id + " =id"))
-        }
-    getEvent().then();
-    }, [props.id])
 
 
     return (
@@ -70,11 +61,11 @@ const CardComponent = (props) => {
                 <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow" onClick={HandleClick}>
                     Join
                 </button>
-                <p className="mb-2 leading-normal">
-                    {participants.map((participant) => (
-                        <p>{participant.participantId}</p>
+                <div className="mb-2 leading-normal">
+                    {participants?.map((participant) => (
+                        <p key={participant.id}>{participant.participantEmail}</p>
                     ))}
-                </p>
+                </div>
             </div>
         </div>
     );
