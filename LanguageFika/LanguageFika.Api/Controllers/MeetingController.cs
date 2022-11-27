@@ -19,7 +19,7 @@ public class MeetingController : ControllerBase
     public async Task<IActionResult> Get()
     {
         var meetings = await _meetingService.All();
-        var meetingViewModels = meetings.Select(m => m.ToViewModel());
+        var meetingViewModels = meetings.Where(x=> x.Date > DateTime.Now).Select(m => m.ToViewModel());
         return Ok(meetingViewModels);
     }
 
