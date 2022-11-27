@@ -4,12 +4,12 @@ import Loading from "../components/Loading";
 
 const Profile = () => {
 
-  const {user, isAuthenticated, isLoading} = useAuth0();
+  const {user, isAuthenticated, isLoading } = useAuth0();
 
   return (
     isAuthenticated && (
       <>
-        {isLoading ? <div><Loading/>></div> :
+        {isLoading ? <div><Loading/></div> :
           <div className="mt-40 mb-40 space-y-5 flex flex-col items-center pb-10">
             <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user.picture} alt="PROFILE"/>
             <h5 className="text-lg text-gray-500 dark:text-darkgray-400">{user.given_name} {user.family_name}</h5>

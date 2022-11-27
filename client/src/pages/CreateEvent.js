@@ -26,11 +26,11 @@ const CreateEvent = () => {
                 language: inputLanguage.current.value
             })
         };
-        console.log(requestOptions)
+
         fetch('https://lingofikaapi.azurewebsites.net/api/Meeting', requestOptions)
             .then(response => {response.json()
-                console.log(response)}).
-        then(() => navigate('/events'));
+                console.log(response)})
+            .then(() => navigate('/events'));
     };
 
     return (

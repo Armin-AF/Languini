@@ -1,5 +1,5 @@
 import {useAuth0} from "@auth0/auth0-react";
-import {useEffect, useState} from "react";
+// import {useEffect, useState} from "react";
 
 const GetUser = async () => {
 
@@ -10,7 +10,7 @@ const GetUser = async () => {
       audience: `https://lingofikaapi.azurewebsites.net`,
     });
 
-    const userUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
+    const apiUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
 
     const requestOptions = {
       method: 'GET',
@@ -20,7 +20,7 @@ const GetUser = async () => {
       },
     };
 
-    await fetch(userUrl, requestOptions)
+    await fetch(apiUrl, requestOptions)
       .then(response => response.json())
   } catch (e) {
     console.log(e.message);
@@ -36,7 +36,7 @@ const CreateUser = async () => {
       audience: `https://lingofikaapi.azurewebsites.net`,
     });
 
-    const userUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
+    const apiUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
 
     const requestOptions = {
       method: 'POST',
@@ -47,7 +47,7 @@ const CreateUser = async () => {
       body: JSON.stringify({nota: 'ponemos lo que sea basado en el modelo'})
     };
 
-    await fetch(userUrl, requestOptions)
+    await fetch(apiUrl, requestOptions)
       .then(response => response.json())
   } catch (e) {
     console.log(e.message);
@@ -63,7 +63,7 @@ const UpdateUser = async () => {
       audience: `https://lingofikaapi.azurewebsites.net`,
     });
 
-    const userUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
+    const apiUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
 
     const requestOptions = {
       method: 'PUT',
@@ -74,14 +74,14 @@ const UpdateUser = async () => {
       body: JSON.stringify({nota: 'ponemos lo que sea basado en el modelo'})
     };
 
-    await fetch(userUrl, requestOptions)
+    await fetch(apiUrl, requestOptions)
       .then(response => response.json())
   } catch (e) {
     console.log(e.message);
   }
 }
 
-const DeleteUser = async () => {
+const DeleteUser = async (id) => {
 
   const {getAccessTokenSilently} = useAuth0();
 
@@ -90,7 +90,7 @@ const DeleteUser = async () => {
       audience: `https://lingofikaapi.azurewebsites.net`,
     });
 
-    const userUrl = `https://lingofikaapi.azurewebsites.net/api/User`;
+    const apiUrl = `https://lingofikaapi.azurewebsites.net/api/User/${id}`;
 
     const requestOptions = {
       method: 'DELETE',
@@ -100,7 +100,7 @@ const DeleteUser = async () => {
       },
     };
 
-    await fetch(userUrl, requestOptions)
+    await fetch(apiUrl, requestOptions)
       .then(response => response.json())
   } catch (e) {
     console.log(e.message);
@@ -129,8 +129,7 @@ useEffect(() => {
 
       const allUsers = await metadataResponse.json();
 
-      const firstName = allUsers[1].firstName;
-      setUserMetadata(firstName);
+      setUserMetadata(allUsers);
     } catch (e) {
       console.log(e.message);
     }
