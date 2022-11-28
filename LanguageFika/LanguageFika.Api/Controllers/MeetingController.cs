@@ -44,7 +44,7 @@ public class MeetingController : ControllerBase
     }
     
     [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Put(Guid id, [FromBody] MeetingViewModel meetingViewModel)
+    public async Task<IActionResult> Put([FromBody] MeetingViewModel meetingViewModel)
     {
         if (meetingViewModel.Date < DateTime.Now)
         {

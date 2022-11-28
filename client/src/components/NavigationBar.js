@@ -8,7 +8,7 @@ const NavigationBar = () => {
             <div className='container mx-auto px-4'>
                 <div className='flex items-center justify-between py-4'>
                     <div>
-                        <img className='w-50 h-10' src={logo} />
+                        <img className='w-50 h-10' src={logo}  alt={"Remember dean"}/>
                     </div>
                     <div className='hidden sm:flex sm:items-center'>
                         <nav>

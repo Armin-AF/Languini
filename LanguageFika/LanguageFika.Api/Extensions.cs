@@ -79,6 +79,7 @@ public static class Extensions
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
+            CreatorEmail = meeting.CreatorEmail,
         };
     }
     
@@ -94,6 +95,7 @@ public static class Extensions
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
+            CreatorEmail = meeting.CreatorEmail,
         };
     }
     
@@ -106,6 +108,7 @@ public static class Extensions
         model.Description = meeting.Description;
         model.Language = meeting.Language;
         model.Location = meeting.Location;
+        model.CreatorEmail = meeting.CreatorEmail;
     }
     
     public static MeetingViewModel ToViewModel(this Meeting? meeting, User? user)
@@ -120,6 +123,7 @@ public static class Extensions
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
+            CreatorEmail = meeting.CreatorEmail,
         };
     }
 }

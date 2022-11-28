@@ -37,6 +37,18 @@ const CardComponent = (props) => {
         }
     }
 
+    const OnDelete = async () => {
+        try {
+            const requestOptions = {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+            };
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Meeting/${props.id}` , requestOptions)
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
     const HandleRemove = async () => {
         try {
 
@@ -57,6 +69,7 @@ const CardComponent = (props) => {
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
                     <div className="flex justify-between item-center">
                         <p className="text-gray-600 font-bold text-sm md:block">{props.location}</p>
+                        <p className="text-gray-600 font-bold text-sm md:block">{props.creatorEmail}</p>
                         <div className="flex items-center">
                             <p className="
                             text-gray-600 font-bold text-sm ml-1">
@@ -68,12 +81,12 @@ const CardComponent = (props) => {
                     <p className="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum tortor id arcu iaculis, eu posuere arcu posuere. Aliquam non.</p>
                     <div>
                         <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
-                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
+                        <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
                         {participants?.map((participant, index) => (
                             <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
                         ))}
                     </div>
-
+                    {user.email === props.creatorEmail && <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnDelete}>Delete Event</button>}
                 </div>
             </div>
         </div>

@@ -53,6 +53,7 @@ public class MeetingService : GenericRepository<Meeting> , IMeetingService
                 return false;
 
             dbSet.Remove(existingUser);
+            await _context.SaveChangesAsync();
 
             return true;
         }
