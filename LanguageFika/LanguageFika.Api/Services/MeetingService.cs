@@ -30,10 +30,14 @@ public class MeetingService : GenericRepository<Meeting> , IMeetingService
             if (existingUser == null)
                 return false;
 
+            existingUser.Id = entity.Id;
             existingUser.Language = entity.Language;
             existingUser.Date = entity.Date;
             existingUser.Description = entity.Description;
             existingUser.CreatorEmail= entity.CreatorEmail;
+            existingUser.Location = entity.Location;
+            dbSet.Update(existingUser);
+            await _context.SaveChangesAsync();
 
             return true;
         }
