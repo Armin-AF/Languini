@@ -1,9 +1,7 @@
 import React, {useRef} from "react";
 import {useNavigate} from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const CreateEvent = () => {
-    const { user } = useAuth0();
     const inputDate = useRef(null);
     const inputDescription = useRef(null);
     const inputLocation = useRef(null);
@@ -23,8 +21,7 @@ const CreateEvent = () => {
                 date: inputDate.current.value,
                 description: inputDescription.current.value,
                 location: inputLocation.current.value,
-                language: inputLanguage.current.value,
-                creatorEmail: user.email
+                language: inputLanguage.current.value
             })
         };
 

@@ -28,7 +28,7 @@ const Events = () => {
       setLoading(false);
     }
     getEvent().then();
-  }, [])
+  }, [[posts]])
 
   return (
     isAuthenticated && (
