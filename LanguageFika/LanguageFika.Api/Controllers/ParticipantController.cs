@@ -37,6 +37,10 @@ namespace LanguageFika.Api.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Participant participant)
         {
+            if (_context.ParticipantsModel!.Any(x => x.MeetingId == participant.MeetingId && x.ParticipantEmail == participant.ParticipantEmail))
+            {
+                return BadRequest("Participant already exists");
+            }
             _context.ParticipantsModel!.Add(participant);
             _context.SaveChanges();
             return Ok(participant);
