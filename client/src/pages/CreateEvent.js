@@ -28,8 +28,8 @@ const CreateEvent = (props) => {
         fetch('https://localhost:7057/api/Meeting', requestOptions)
             .then(response => {response.json()
                 console.log(response)})
-            .then(() => navigate('/events'));
-        props.reload2();
+            .then(() => props.reload2());
+
         props.close();
     };
 

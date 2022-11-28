@@ -29,9 +29,9 @@ const Modal = (props) => {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                  <div className="my-4 text-slate-500 text-lg leading-relaxed">
                     <CreateEvent close={Close} reload2={props.reload1} />
-                  </p>
+                  </div>
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
