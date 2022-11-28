@@ -40,13 +40,6 @@ const SearchBar = ({ posts, setSearchResults }) => {
                 <input className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none mt-5"
                     type="search" name="search" placeholder="Search" value={searchTerm} onChange={handleSearchChange} />
             </form>
-            <div className={"justify-center flex mt-5"}>
-                <MultiSelect
-                    className="multi-select"
-                    onChange={handleOnchange}
-                    options={options}
-                />
-            </div>
             <div>
                 {searchTerm}
             </div>
