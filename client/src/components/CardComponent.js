@@ -1,10 +1,10 @@
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
-import {useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const CardComponent = (props) => {
-    const {user} = useAuth0();
+    const { user } = useAuth0();
     const [participants, setParticipants] = useState([]);
     const [createParticipant, setCreateParticipant] = useState(false);
 
@@ -26,7 +26,7 @@ const CardComponent = (props) => {
             if (!createParticipant) {
                 const requestOptions = {
                     method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         participantEmail: user.email,
                         meetingId: props.id
@@ -40,8 +40,7 @@ const CardComponent = (props) => {
             console.log(e.message);
         }
     }
-
-
+    
     return (
         <div className="flex flex-col justify-center my-10">
             <div
@@ -55,18 +54,18 @@ const CardComponent = (props) => {
                         <div className="flex items-center">
                             <p className="
                             text-gray-600 font-bold text-sm ml-1">
-                                <Moment format="dddd MMMM Do YYYY, h:mm a">{props.date}</Moment>
+                                <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
                             </p>
                         </div>
-                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 md:block lg:w-20" onClick={HandleClick}>Join</button>
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
-                    <div className="mb-2 leading-normal">
-                    {participants?.map((participant) => (
-                        <p key={participant.id}>{participant.participantEmail}</p>
-                    ))}
-                </div>
                     <p className="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum tortor id arcu iaculis, eu posuere arcu posuere. Aliquam non.</p>
+                    <div className="mb-2 leading-normal">
+                        {participants?.map((participant) => (
+                            <p key={participant.id}>{participant.participantEmail}</p>
+                        ))}
+                    </div>
+                    <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 md:block lg:w-20" onClick={HandleClick}>Join</button>
                 </div>
             </div>
         </div>
