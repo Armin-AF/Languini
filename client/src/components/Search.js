@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
 
 const SearchBar = ({ posts, setSearchResults }) => {
