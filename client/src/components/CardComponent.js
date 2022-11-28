@@ -6,7 +6,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 const CardComponent = (props) => {
     const { user } = useAuth0();
     const [participants, setParticipants] = useState([]);
-    const [createParticipant, setCreateParticipant] = useState(false);
 
     useEffect(() => {
         const getParticipants = async () => {
@@ -23,19 +22,26 @@ const CardComponent = (props) => {
 
     const HandleClick = async () => {
         try {
-            if (!createParticipant) {
-                const requestOptions = {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        participantEmail: user.email,
-                        meetingId: props.id
-                    })
-                };
-                await fetch('https://lingofikaapi.azurewebsites.net/api/Participant', requestOptions)
-                    .then(response => response.json())
-                setCreateParticipant(true)
-            }
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    participantEmail: user.email,
+                    meetingId: props.id
+                })
+            };
+            await fetch('https://lingofikaapi.azurewebsites.net/api/Participant', requestOptions)
+                .then(response => response.json())
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    const HandleRemove = async () => {
+        try {
+
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant?participantEmail=${user.email}&meetingId=${props.id}`, { method: 'DELETE' })
+
         } catch (e) {
             console.log(e.message);
         }
@@ -46,7 +52,7 @@ const CardComponent = (props) => {
             <div
                 className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" class="rounded-xl" />
+                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="rounded-xl" />
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
                     <div className="flex justify-between item-center">
@@ -62,8 +68,9 @@ const CardComponent = (props) => {
                     <p className="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum tortor id arcu iaculis, eu posuere arcu posuere. Aliquam non.</p>
                     <div>
                         <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
-                        {participants?.map((participant) => (
-                            <p className="text-gray-600 font-thin text-sm mt-2" key={participant.id}>{participant.participantEmail}</p>
+                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
+                        {participants?.map((participant, index) => (
+                            <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
                         ))}
                     </div>
 

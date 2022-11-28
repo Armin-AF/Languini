@@ -46,17 +46,17 @@ namespace LanguageFika.Api.Controllers
             return Ok(participant);
         }
         
-        [HttpDelete("{id:guid}")]
-        public IActionResult Delete(Guid id)
+        [HttpDelete]
+        public IActionResult Delete(string participantEmail, Guid meetingId)
         {
-            var participant = _context.ParticipantsModel!.FirstOrDefault(x => x.ParticipantId == id);
+            var participant = _context.ParticipantsModel!.FirstOrDefault(x => x.MeetingId == meetingId && x.ParticipantEmail == participantEmail);
             if (participant == null)
             {
-                return NotFound();
+                return BadRequest("Participant does not exist");
             }
             _context.ParticipantsModel!.Remove(participant);
             _context.SaveChanges();
-            return Ok();
+            return Ok(participant);
         }
     }
 }
