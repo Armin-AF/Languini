@@ -14,9 +14,8 @@ const Events = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getEvent = async () => {
       try {
-        await fetch('https://localhost:7057/api/Meeting')
+        fetch('https://localhost:7057/api/Meeting')
           .then(response => response.json())
           .then(data => {
             setPosts(data)
@@ -26,9 +25,8 @@ const Events = () => {
         console.log(e.message);
       }
       setLoading(false);
-    }
-    getEvent().then();
-  }, [[posts]])
+
+  }, [])
 
   return (
     isAuthenticated && (

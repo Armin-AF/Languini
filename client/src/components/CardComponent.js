@@ -18,7 +18,7 @@ const CardComponent = (props) => {
             }
         }
         getParticipants().then();
-    }, [participants, props.id, user])
+    }, [])
 
     const HandleClick = async () => {
         try {
@@ -32,6 +32,11 @@ const CardComponent = (props) => {
             };
             await fetch('https://localhost:7057/api/Participant', requestOptions)
                 .then(response => response.json())
+
+            await fetch(`https://localhost:7057/api/Participant/${props.id}`)
+              .then(response => response.json())
+              .then(data => setParticipants(data))
+
         } catch (e) {
             console.log(e.message);
         }
@@ -44,6 +49,7 @@ const CardComponent = (props) => {
                 headers: { 'Content-Type': 'application/json' },
             };
             await fetch(`https://localhost:7057/api/Meeting/${props.id}` , requestOptions)
+
         } catch (e) {
             console.log(e.message);
         }
@@ -55,14 +61,12 @@ const CardComponent = (props) => {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    id: props.id,
-                    title: props.title,
-                    description: props.description,
-                    date: props.date,
-                    time: props.time,
-                    language: props.language,
-                    location: props.location,
-                    hostEmail: props.hostEmail,
+                    "meetingId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "date": "2022-11-28T14:34:53.057Z",
+                    "description": "string",
+                    "location": "string",
+                    "language": "string",
+                    "creatorEmail": "string"
                 })
             };
             await fetch(`https://localhost:7057/api/Meeting/${props.id}` , requestOptions)
@@ -75,6 +79,10 @@ const CardComponent = (props) => {
         try {
 
             await fetch(`https://localhost:7057/api/Participant?participantEmail=${user.email}&meetingId=${props.id}`, { method: 'DELETE' })
+
+            await fetch(`https://localhost:7057/api/Participant/${props.id}`)
+              .then(response => response.json())
+              .then(data => setParticipants(data))
 
         } catch (e) {
             console.log(e.message);
