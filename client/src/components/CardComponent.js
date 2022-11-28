@@ -48,7 +48,7 @@ const CardComponent = (props) => {
     }
 
     return (
-        <div className="flex flex-col justify-center my-10">
+        <div className="flex flex-col justify-center my-10 text-left">
             <div
                 className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
@@ -66,13 +66,24 @@ const CardComponent = (props) => {
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
                     <p className="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum tortor id arcu iaculis, eu posuere arcu posuere. Aliquam non.</p>
-                    <div>
-                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
-                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
-                        {participants?.map((participant, index) => (
-                            <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
-                        ))}
+                    <p className="pb-2 w-full border-b-2 border-black-500"></p>
+                    
+                    
+                    <div className="grid grid-cols-2 text-left vertical pt-2">
+                    
+                        <div>
+                            <button className="bg-cyan-400 px-3 py-1 rounded-full text-s font-medium text-gray-800 lg:w-20 mr-2" onClick={HandleClick}>Join</button>
+                            <button className="bg-cyan-400 px-3 py-1 rounded-full text-s font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
+                        </div>
+                        
+                        <div> 
+                            <h2 className="font-semibold text-s">Participants: </h2>
+                            {participants?.map((participant, index) => (
+                                <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
+                            ))}
                     </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -80,3 +91,4 @@ const CardComponent = (props) => {
     );
 };
 export default CardComponent;
+
