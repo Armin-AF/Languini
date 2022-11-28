@@ -15,7 +15,6 @@ const NavigationBar = () => {
                             <NavLink to="/events" className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4" >Events</NavLink>
                             <NavLink to="/profile" className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">Profile</NavLink>
                             <NavLink to="/about" className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">About</NavLink>
-                            <NavLink to="/create_event" className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">Create Event</NavLink>
                         </nav>
                         <div>
                             <LogOut />
