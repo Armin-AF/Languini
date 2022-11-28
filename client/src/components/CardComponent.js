@@ -18,7 +18,7 @@ const CardComponent = (props) => {
             }
         }
         getParticipants().then();
-    }, [props.id])
+    }, [participants, props.id, user])
 
     const HandleClick = async () => {
         try {
