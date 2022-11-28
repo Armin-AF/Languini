@@ -33,6 +33,7 @@ public class MeetingService : GenericRepository<Meeting> , IMeetingService
             existingUser.Language = entity.Language;
             existingUser.Date = entity.Date;
             existingUser.Description = entity.Description;
+            existingUser.CreatorEmail= entity.CreatorEmail;
 
             return true;
         }
