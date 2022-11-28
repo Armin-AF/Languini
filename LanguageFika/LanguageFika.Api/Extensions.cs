@@ -83,7 +83,7 @@ public static class Extensions
         };
     }
     
-    public static Meeting ToModel(this MeetingViewModel? meeting)
+    public static Meeting ToMeetingModel(this MeetingViewModel? meeting)
     {
         if (meeting == null)
             return null!;

@@ -28,7 +28,7 @@ public class MeetingService : GenericRepository<Meeting> , IMeetingService
                 .FirstOrDefaultAsync();
 
             if (existingUser == null)
-                return await Add(entity);
+                return false;
 
             existingUser.Language = entity.Language;
             existingUser.Date = entity.Date;
