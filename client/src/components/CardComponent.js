@@ -1,11 +1,21 @@
-
 import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 import { useAuth0 } from "@auth0/auth0-react";
+import FormEditMeeting from "./FormEditMeeting";
 
 const CardComponent = (props) => {
     const { user } = useAuth0();
     const [participants, setParticipants] = useState([]);
+    const [openEditForm, setOpenEditForm] = useState(false);
+
+    const OnEditButtonClick = () => {
+        if (openEditForm) {
+            setOpenEditForm(false);
+        }
+        else {
+            setOpenEditForm(true);
+        }
+    }
 
     useEffect(() => {
         const getParticipants = async () => {
@@ -55,26 +65,6 @@ const CardComponent = (props) => {
         }
     }
 
-    const OnEdit = async () => {
-        try {
-            const requestOptions = {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    meetingId: props.id,
-                    date: props.date,
-                    description: "This is a put request",
-                    location: props.location,
-                    language: props.language,
-                    creatorEmail: user.email
-                })
-            };
-            await fetch(`https://localhost:7057/api/Meeting` , requestOptions)
-        } catch (e) {
-            console.log(e.message);
-        }
-    }
-
     const HandleRemove = async () => {
         try {
 
@@ -109,6 +99,7 @@ const CardComponent = (props) => {
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
                     <p className="md:text-lg text-gray-500 text-base">{props.description}</p>
+                    <button className="bg-transparent-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>
                     <div>
                         <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
                         <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
@@ -117,7 +108,8 @@ const CardComponent = (props) => {
                         ))}
                     </div>
                     {user.email === props.creatorEmail && <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnDelete}>Delete Event</button>}
-                    <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEdit}>Edit Description</button>
+                    {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
+
                 </div>
             </div>
         </div>
