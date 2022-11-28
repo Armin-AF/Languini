@@ -40,7 +40,7 @@ const CardComponent = (props) => {
             console.log(e.message);
         }
     }
-    
+
     return (
         <div className="flex flex-col justify-center my-10">
             <div
@@ -50,7 +50,7 @@ const CardComponent = (props) => {
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
                     <div className="flex justify-between item-center">
-                        <p className="text-gray-600 font-bold md:block">{props.location}</p>
+                        <p className="text-gray-600 font-bold text-sm md:block">{props.location}</p>
                         <div className="flex items-center">
                             <p className="
                             text-gray-600 font-bold text-sm ml-1">
@@ -60,12 +60,13 @@ const CardComponent = (props) => {
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
                     <p className="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum tortor id arcu iaculis, eu posuere arcu posuere. Aliquam non.</p>
-                    <div className="mb-2 leading-normal">
+                    <div>
+                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
                         {participants?.map((participant) => (
-                            <p key={participant.id}>{participant.participantEmail}</p>
+                            <p className="text-gray-600 font-thin text-sm mt-2" key={participant.id}>{participant.participantEmail}</p>
                         ))}
                     </div>
-                    <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 md:block lg:w-20" onClick={HandleClick}>Join</button>
+
                 </div>
             </div>
         </div>
