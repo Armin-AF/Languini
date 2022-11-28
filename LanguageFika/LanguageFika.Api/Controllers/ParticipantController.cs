@@ -23,34 +23,38 @@ namespace LanguageFika.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var participants = _context.Participants!.ToList();
+            var participants = _context.ParticipantsModel!.ToList();
             return Ok(participants);
         }
         
         [HttpGet("{meetingId:guid}")]
         public IActionResult Get(Guid meetingId)
         {
-            var participants = _context.Participants!.Where(x => x.MeetingId == meetingId).ToList();
+            var participants = _context.ParticipantsModel!.Where(x => x.MeetingId == meetingId).ToList();
             return Ok(participants);
         }
         
         [HttpPost]
         public IActionResult Post([FromBody] Participant participant)
         {
-            _context.Participants!.Add(participant);
+            if (_context.ParticipantsModel!.Any(x => x.MeetingId == participant.MeetingId && x.ParticipantEmail == participant.ParticipantEmail))
+            {
+                return BadRequest("Participant already exists");
+            }
+            _context.ParticipantsModel!.Add(participant);
             _context.SaveChanges();
             return Ok(participant);
         }
         
-        [HttpDelete("ParticipantId")]
-        public IActionResult Delete(string participantId)
+        [HttpDelete("{id:guid}")]
+        public IActionResult Delete(Guid id)
         {
-            var participant = _context.Participants!.FirstOrDefault(x => x.ParticipantId == participantId);
+            var participant = _context.ParticipantsModel!.FirstOrDefault(x => x.ParticipantId == id);
             if (participant == null)
             {
                 return NotFound();
             }
-            _context.Participants!.Remove(participant);
+            _context.ParticipantsModel!.Remove(participant);
             _context.SaveChanges();
             return Ok();
         }

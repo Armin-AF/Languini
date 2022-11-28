@@ -94,7 +94,6 @@ public static class Extensions
             Description = meeting.Description,
             Language = meeting.Language,
             Location = meeting.Location,
-            Participants = new List<Participant>(),
         };
     }
     
