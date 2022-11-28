@@ -58,9 +58,10 @@ const CardComponent = (props) => {
     const OnEdit = async () => {
         try {
             const requestOptions = {
-                method: 'PUT',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    meetingId: props.id,
                     date: props.date,
                     description: "This is a put request",
                     location: props.location,
@@ -68,7 +69,7 @@ const CardComponent = (props) => {
                     creatorEmail: user.email
                 })
             };
-            await fetch(`https://localhost:7057/api/Meeting/${props.id}` , requestOptions)
+            await fetch(`https://localhost:7057/api/Meeting` , requestOptions)
         } catch (e) {
             console.log(e.message);
         }
