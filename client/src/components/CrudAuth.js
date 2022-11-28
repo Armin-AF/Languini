@@ -1,7 +1,7 @@
-import {useAuth0} from "@auth0/auth0-react";
-// import {useEffect, useState} from "react";
+//import {useAuth0} from "@auth0/auth0-react";
+//import {useEffect, useState} from "react";
 
-const GetUser = async () => {
+/*const GetUser = async () => {
 
   const {getAccessTokenSilently} = useAuth0();
 
@@ -105,7 +105,7 @@ const DeleteUser = async (id) => {
   } catch (e) {
     console.log(e.message);
   }
-}
+}*/
 
 /* const [userMetadata, setUserMetadata] = useState(null);
 const { user, isAuthenticated, getAccessTokenSilently, isLoading } = useAuth0();
@@ -138,4 +138,3 @@ useEffect(() => {
   getUserMetadata().then();
 }, [getAccessTokenSilently, user?.sub]); */
 
-export default {GetUser, CreateUser, UpdateUser, DeleteUser};

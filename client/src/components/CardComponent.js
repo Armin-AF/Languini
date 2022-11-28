@@ -10,7 +10,7 @@ const CardComponent = (props) => {
     useEffect(() => {
         const getParticipants = async () => {
             try {
-                await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant/${props.id}`)
+                await fetch(`https://localhost:7057/api/Participant/${props.id}`)
                     .then(response => response.json())
                     .then(data => setParticipants(data))
             } catch (e) {
@@ -30,7 +30,7 @@ const CardComponent = (props) => {
                     meetingId: props.id
                 })
             };
-            await fetch('https://lingofikaapi.azurewebsites.net/api/Participant', requestOptions)
+            await fetch('https://localhost:7057/api/Participant', requestOptions)
                 .then(response => response.json())
         } catch (e) {
             console.log(e.message);
@@ -43,7 +43,29 @@ const CardComponent = (props) => {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
             };
-            await fetch(`https://lingofikaapi.azurewebsites.net/api/Meeting/${props.id}` , requestOptions)
+            await fetch(`https://localhost:7057/api/Meeting/${props.id}` , requestOptions)
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    const OnEdit = async () => {
+        try {
+            const requestOptions = {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: props.id,
+                    title: props.title,
+                    description: props.description,
+                    date: props.date,
+                    time: props.time,
+                    language: props.language,
+                    location: props.location,
+                    hostEmail: props.hostEmail,
+                })
+            };
+            await fetch(`https://localhost:7057/api/Meeting/${props.id}` , requestOptions)
         } catch (e) {
             console.log(e.message);
         }
@@ -52,7 +74,7 @@ const CardComponent = (props) => {
     const HandleRemove = async () => {
         try {
 
-            await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant?participantEmail=${user.email}&meetingId=${props.id}`, { method: 'DELETE' })
+            await fetch(`https://localhost:7057/api/Participant?participantEmail=${user.email}&meetingId=${props.id}`, { method: 'DELETE' })
 
         } catch (e) {
             console.log(e.message);
@@ -87,6 +109,7 @@ const CardComponent = (props) => {
                         ))}
                     </div>
                     {user.email === props.creatorEmail && <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnDelete}>Delete Event</button>}
+                    <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEdit}>Edit Description</button>
                 </div>
             </div>
         </div>

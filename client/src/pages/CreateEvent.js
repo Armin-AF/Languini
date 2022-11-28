@@ -25,7 +25,7 @@ const CreateEvent = () => {
             })
         };
 
-        fetch('https://lingofikaapi.azurewebsites.net/api/Meeting', requestOptions)
+        fetch('https://localhost:7057/api/Meeting', requestOptions)
             .then(response => {response.json()
                 console.log(response)})
             .then(() => navigate('/events'));

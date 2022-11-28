@@ -8,21 +8,6 @@ const SearchBar = ({ posts, setSearchResults }) => {
 
     const handleSubmit = (e) => e.preventDefault()
 
-    const handleOnchange = (val) => {
-
-        setSearchTerm(val);
-        if (!searchTerm.target.value) return setSearchResults(posts)
-        const resultsArray = posts.filter(post => post.language.toLowerCase().includes(val.target.value.toLowerCase()))
-        setSearchResults(resultsArray)
-    }
-
-    const options = [
-        { value: "all", label: "All" },
-        { value: "japanese", label: "Japanese" },
-        { value: "english", label: "English" },
-        { value: "swedish", label: "Swedish" },
-    ]
-
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value)
 
