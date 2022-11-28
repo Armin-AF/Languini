@@ -1,7 +1,5 @@
 import React, {useRef} from "react";
-import Footer from "../components/Footer/Footer";
 import {useNavigate} from "react-router-dom";
-
 
 const CreateEvent = () => {
     const inputDate = useRef(null);
@@ -35,15 +33,13 @@ const CreateEvent = () => {
 
     return (
         <>
-            <h1 className={"justify-center mt-20 font-medium"}> Create a new event ☕️</h1>
-            <div className="mt-40 mb-10 space-x-1 space-y-1">
-                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 inline-flex" ref={inputDate} type="datetime-local"/>
-                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 inline-flex" ref={inputDescription} type="text" placeholder="Description"/>
-                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 inline-flex" ref={inputLocation} type="text" placeholder="Location"/>
-                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 inline-flex" ref={inputLanguage} type="text" placeholder="Language"/>
+            <div className="grid grid-cols-1 mb-10 space-x-1 space-y-1">
+                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80" ref={inputDate} type="datetime-local"/>
+                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80" ref={inputDescription} type="text" placeholder="Description"/>
+                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80" ref={inputLocation} type="text" placeholder="Location"/>
+                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80" ref={inputLanguage} type="text" placeholder="Language"/>
             </div>
-            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 inline-flex items-center w-40 justify-center rounded-lg mb-40" onClick={onButtonClick}>Submit</button>
-            <Footer />
+            <button className="bg-cyan-400 hover:bg-cyan-300 text-gray-800 font-bold py-2 px-4 inline-flex items-center w-40 justify-center rounded-lg" onClick={onButtonClick}>Submit</button>
         </>
     );
 }
