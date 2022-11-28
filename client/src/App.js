@@ -8,13 +8,14 @@ import NavigationBar from "./components/NavigationBar";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import CreateEvent from "./pages/CreateEvent";
+import Loading from "./components/Loading";
 
 function App() {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
 
   return (
       <div className="App">
-        {!isAuthenticated ? (
+        { isLoading? <Loading /> : !isAuthenticated ? (
                 <div>
                     <Landing />
                 </div>
