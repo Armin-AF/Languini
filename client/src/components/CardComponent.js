@@ -63,7 +63,7 @@ const CardComponent = (props) => {
                 body: JSON.stringify({
                     "meetingId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
                     "date": "2022-11-28T14:34:53.057Z",
-                    "description": "string",
+                    description: "string",
                     "location": "string",
                     "language": "string",
                     "creatorEmail": "string"
@@ -108,7 +108,7 @@ const CardComponent = (props) => {
                         </div>
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
-                    <p className="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum tortor id arcu iaculis, eu posuere arcu posuere. Aliquam non.</p>
+                    <p className="md:text-lg text-gray-500 text-base">{props.description}</p>
                     <div>
                         <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
                         <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>

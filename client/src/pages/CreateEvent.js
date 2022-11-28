@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import {useNavigate} from "react-router-dom";
 
-const CreateEvent = () => {
+const CreateEvent = (props) => {
     const inputDate = useRef(null);
     const inputDescription = useRef(null);
     const inputLocation = useRef(null);
@@ -29,6 +29,8 @@ const CreateEvent = () => {
             .then(response => {response.json()
                 console.log(response)})
             .then(() => navigate('/events'));
+        props.reload2();
+        props.close();
     };
 
     return (
