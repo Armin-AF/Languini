@@ -104,9 +104,8 @@ const CardComponent = (props) => {
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
                     <p className="md:text-lg text-gray-500 text-base">{props.description}</p>
+                    <p className="text-gray-600 font-bold text-xs md:block">Created by: {props.creatorEmail}</p>
 
-
-                    {user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
                     <div>
                         {arrayEmail?.includes(user.email) ? <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleRemove}>Remove</button>
                         : arrayEmail.length < 5 ? <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleClick}>Join</button> : <button></button>}
@@ -119,6 +118,7 @@ const CardComponent = (props) => {
                     {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
                     </div>
                     {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
+                    
                     
 
                 </div>
