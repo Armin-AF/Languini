@@ -52,7 +52,9 @@ const Events = () => {
         <h1 className="text-1xl text-center font-bold text-gray-800 mt-10">Search for a language to begin. Can't find a suitable event? Simply create your own!</h1>
         <div className="flex justify-center my-10 align-middle">
           <SearchBar posts={posts} setSearchResults={setSearchResults} />
-          <CreateButton reload1={Reload}/>
+        </div>
+        <div className="flex justify-center my-10 align-middle">
+        <CreateButton reload1={Reload}/>
         </div>
         {loading ? <div>< Loading /></div> :
           <CardList searchResults={searchResults} />}
