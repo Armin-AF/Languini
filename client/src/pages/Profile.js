@@ -1,6 +1,7 @@
 import Footer from "../components/Footer/Footer";
 import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../components/Loading";
+import LogOut from "../components/LogOut";
 
 const Profile = () => {
 
@@ -23,6 +24,7 @@ const Profile = () => {
               <span className="text-sm text-gray-500 dark:text-darkgray-400">{user.email}</span>
               <span className="text-sm text-gray-500 dark:text-darkgray-400">Username: {user.nickname}</span>
               <span className="text-sm text-gray-500 dark:text-darkgray-400">Language: {user.locale}</span>
+              <LogOut/>
 
           </div>}
 
