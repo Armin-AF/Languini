@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 import { useAuth0 } from "@auth0/auth0-react";
 import FormEditMeeting from "./FormEditMeeting";
+import EditButton from "./EditButton";
 
 const CardComponent = (props) => {
     const { user } = useAuth0();
@@ -88,12 +89,12 @@ const CardComponent = (props) => {
             <div
                 className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="rounded-xl" />
+                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="rounded-xl object-top" />
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
                     <div className="flex justify-between item-center">
                         <p className="text-gray-600 font-bold text-sm md:block">{props.location}</p>
-                        <p className="text-gray-600 font-bold text-sm md:block">{props.creatorEmail}</p>
+                        
                         <div className="flex items-center">
                             <p className="
                             text-gray-600 font-bold text-sm ml-1">
@@ -103,8 +104,8 @@ const CardComponent = (props) => {
                     </div>
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
                     <p className="md:text-lg text-gray-500 text-base">{props.description}</p>
+                    <p className="text-gray-600 font-bold text-xs md:block">Created by: {props.creatorEmail}</p>
 
-                    {user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
                     <div>
                         {arrayEmail?.includes(user.email) ? <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleRemove}>Remove</button>
                         : arrayEmail.length < 5 ? <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleClick}>Join</button> : <button></button>}
@@ -112,8 +113,13 @@ const CardComponent = (props) => {
                             <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
                         ))}
                     </div>
-                    {user.email === props.creatorEmail && <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={OnDelete}>Delete Event</button>}
+                    <div className="flex justify-center">
+                    {user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 lg:w-20" onClick={OnDelete}>🗑</button>}
+                    {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
+                    </div>
                     {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
+                    
+                    
 
                 </div>
             </div>
