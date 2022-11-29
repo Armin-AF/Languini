@@ -57,7 +57,7 @@ const Events = () => {
         <CreateButton reload1={Reload}/>
         </div>
         {loading ? <div>< Loading /></div> :
-          <CardList searchResults={searchResults} />}
+          <CardList searchResults={searchResults} reload={Reload} />}
         <Footer />
 
       </div>
