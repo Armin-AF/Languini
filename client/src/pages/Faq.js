@@ -11,27 +11,27 @@ const Faq = () => {
     const faq = [
         {
             number: 1,
-            question: "What is Fancy best component?",
+            question: "What is Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 2,
-            question: "What is Fancy best component?",
+            question: "What is Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 3,
-            question: "What is Fancy best component?",
+            question: "What is Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 4,
-            question: "What is Fancy best component?",
+            question: "What is Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 5,
-            question: "What is Fancy best component?",
+            question: "Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         }
     ]
