@@ -3,62 +3,65 @@ import Footer from "../components/Footer/Footer";
 const About = () => {
   return (
     <div>
-      <section className="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
-        <div className="container mx-auto">
-          <div className="-mx-4 flex flex-wrap lg:justify-between">
-            <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+      <section className="bg-white py-20 lg:py-[150px] grid place-items-center ">
+        <div className="">
+          <div className="">
+            <div className="">
               <div className="mb-12 max-w-[570px] lg:mb-0">
                 
                 
-                
-                
-                <h1 className="text-dark mb-1 text-xl font-bold">About Us</h1>
-
-                <p className="text-body-color mb-9 text-base leading-relaxed">
-                  We are a Stockholm based scale up, started at Salt, school of applied technology. We are currently a
-                  small core team of four people.
-                </p>
-                <div className="mb-8 flex w-full max-w-[370px]">
-                  <div
-                    className="bg-primary text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]"
-                  >
-
+                 
+                <div className="mb-8 flex w-full max-w-[400px]">
+                  
+                   <div className="w-full">
+                    <h4 className="text-dark mb-1 text-xl font-bold ">About Us</h4>
+                    <p className="text-body-color text-base text-sm text-gray-500">
+                      We are a Stockholm based scale up, started at Salt, school of applied technology. We are currently a
+                      small core team of four people.
+                    </p>
                   </div>
-                  <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold">Our Mission</h4>
-                    <p className="text-body-color text-base">
+                </div>
+                
+                
+                
+                
+                <div className="mb-8 flex w-full max-w-[400px]">
+                  
+                   <div className="w-full">
+                    <h4 className="text-dark mb-1 text-xl font-bold ">Our Mission</h4>
+                    <p className="text-body-color text-base text-sm text-gray-500">
                       At Languini we are all about connecting people. Our mission is encouraging curios people to
                       connect, enabling learning new languages and finding new friends!
                       We hope you will have a great time using our services.
-
                     </p>
                   </div>
                 </div>
-                <div className="mb-8 flex w-full max-w-[370px]">
-                  <div
-                    className="bg-primary text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]"
-                  >
-
-                  </div>
-                  <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold">The Team</h4>
-                    <p className="text-body-color text-base">
-                      Maximiliano Barrientos, Eric Rosén, Dean Timmins and Armin Afazeli.
-
+                
+                     
+                <div className="mb-8 flex w-full max-w-[400px]">
+                  
+                   <div className="w-full">
+                    <h4 className="text-dark mb-1 text-xl font-bold ">The Team</h4>
+                    <p className="text-body-color text-base text-sm text-gray-500">
+                       Maximiliano Barrientos, Eric Rosén, Dean Timmins and Armin Afazeli.
                     </p>
                   </div>
                 </div>
-                <div className="mb-8 flex w-full max-w-[370px]">
-                  <div
-                    className="bg-primary text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]"
-                  >
-
-                  </div>
-                  <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold">Contact Us</h4>
-                    <p className="text-body-color text-base">info@linguini.com</p>
+                
+                
+                <div className="mb-8 flex w-full max-w-[400px]">
+                
+                   <div className="w-full">
+                    <h4 className="text-dark mb-1 text-xl font-bold ">Contact Us</h4>
+                    <p className="text-body-color text-base text-sm text-gray-500">
+                        info@linguini.com
+                    </p>
                   </div>
                 </div>
+                
+                
+                
+          
               </div>
             </div>
          
