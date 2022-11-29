@@ -42,7 +42,7 @@ const Faq = () => {
             {/* :TITLE & IMAGE */}
             <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
                 <img src="https://fancytailwind.com/static/faq1-8ef2a6c2addbed9f838eea20b9ad21b6.png" alt="Frequently Asked Questions" className="w-full h-full" />
-                <h2 className="text-center text-2xl sm:text-4xl text-sky-600 tracking-widest">Frequently Asked Questions 1</h2>
+                <h2 className="text-center text-2xl sm:text-4xl text-gray-600 tracking-widest">Frequently Asked Questions 1</h2>
             </div>
 
             {/* :FAQ */}
@@ -54,7 +54,7 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     {/* Question */}
-                                    <dt className={`group w-full border-b-2 border-sky-600 text-gray-800 hover:bg-sky-600 hover:text-white ${open && "bg-sky-600 text-white"}`}>
+                                    <dt className={`group w-full border-b-2 border-sky-600 text-gray-800 hover:bg-gray-400 hover:text-white ${open && "bg-sky-600 text-white"}`}>
                                         <Disclosure.Button className="py-5 px-3 w-full flex justify-between items-center">
                                             <span className="text-lg md:text-xl text-left font-semibold">{faq.question}</span>
                                         </Disclosure.Button>
