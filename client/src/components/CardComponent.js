@@ -97,7 +97,7 @@ const CardComponent = (props) => {
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
                     <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="rounded-xl" />
                 </div>
-                <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 border">
+                <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 border rounded-lg">
                     <div className="flex justify-between item-center">
                         <p className="text-gray-600 font-bold text-sm md:block">📍{props.location}</p>
                         <div className="flex items-center">
