@@ -48,14 +48,15 @@ const Events = () => {
   return (
     isAuthenticated && (
       <div>
+        <div className="shadow pb-10">
         <h1 className="text-3xl text-center font-bold text-gray-800 mt-10">Welcome to Languini</h1>
         <h1 className="text-1xl text-center font-bold text-gray-800 mt-10">Search for a language to begin. Can't find a suitable event? Simply create your own!</h1>
-        <div className="flex justify-center my-10 align-middle">
+        </div>
+        <div className="flex justify-center my-10 space-x-40">
+        <CreateButton reload1={Reload}/>
           <SearchBar posts={posts} setSearchResults={setSearchResults} />
         </div>
-        <div className="flex justify-center my-10 align-middle">
-        <CreateButton reload1={Reload}/>
-        </div>
+   
         {loading ? <div>< Loading /></div> :
           <CardList searchResults={searchResults} reload={Reload} />}
         <Footer />
