@@ -83,7 +83,7 @@ public static class Extensions
         };
     }
     
-    public static Meeting ToModel(this MeetingViewModel? meeting)
+    public static Meeting ToMeetingModel(this MeetingViewModel? meeting)
     {
         if (meeting == null)
             return null!;
@@ -99,31 +99,15 @@ public static class Extensions
         };
     }
     
-    public static void UpdateModel(this MeetingViewModel? meeting, Meeting? model)
+    public static void UpdateModelFromViewModel(this Meeting? meeting, MeetingViewModel? viewModel)
     {
-        if (meeting == null || model == null) return;
-        
-        model.Id = meeting.MeetingId;
-        model.Date = meeting.Date;
-        model.Description = meeting.Description;
-        model.Language = meeting.Language;
-        model.Location = meeting.Location;
-        model.CreatorEmail = meeting.CreatorEmail;
-    }
-    
-    public static MeetingViewModel ToViewModel(this Meeting? meeting, User? user)
-    {
-        if (meeting == null)
-            return null!;
-        
-        return new MeetingViewModel
-        {
-            MeetingId = meeting.Id,
-            Date = meeting.Date,
-            Description = meeting.Description,
-            Language = meeting.Language,
-            Location = meeting.Location,
-            CreatorEmail = meeting.CreatorEmail,
-        };
+        if (meeting == null || viewModel == null) return;
+
+        meeting.Id = viewModel.MeetingId;
+        meeting.Date = viewModel.Date;
+        meeting.Description = viewModel.Description;
+        meeting.Language = viewModel.Language;
+        meeting.Location = viewModel.Location;
+        meeting.CreatorEmail = viewModel.CreatorEmail;
     }
 }

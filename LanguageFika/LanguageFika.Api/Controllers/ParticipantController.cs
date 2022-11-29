@@ -30,8 +30,7 @@ namespace LanguageFika.Api.Controllers
         [HttpGet("{meetingId:guid}")]
         public IActionResult Get(Guid meetingId)
         {
-            var participants = _context.ParticipantsModel!.Where(x => x.MeetingId == meetingId).ToList();
-            return Ok(participants);
+            return Ok(_context.ParticipantsModel!.Where(x => x.MeetingId == meetingId).ToList());
         }
         
         [HttpPost]
