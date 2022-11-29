@@ -1,4 +1,5 @@
 import Footer from "../components/Footer/Footer";
+import ItemContainer from "../components/Footer/ItemContainer";
 
 const About = () => {
   return (
@@ -8,11 +9,11 @@ const About = () => {
           <div className="">
             <div className="">
               <div className="mb-12 max-w-[570px] lg:mb-0">
-                
-                
-                 
+
+
+
                 <div className="mb-8 flex w-full max-w-[400px]">
-                  
+
                    <div className="w-full">
                     <h4 className="text-dark mb-1 text-xl font-bold ">About Us</h4>
                     <p className="text-body-color text-base text-sm text-gray-500">
@@ -21,12 +22,12 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                
-                
-                
-                
+
+
+
+
                 <div className="mb-8 flex w-full max-w-[400px]">
-                  
+
                    <div className="w-full">
                     <h4 className="text-dark mb-1 text-xl font-bold ">Our Mission</h4>
                     <p className="text-body-color text-base text-sm text-gray-500">
@@ -36,10 +37,10 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                
-                     
+
+
                 <div className="mb-8 flex w-full max-w-[400px]">
-                  
+
                    <div className="w-full">
                     <h4 className="text-dark mb-1 text-xl font-bold ">The Team</h4>
                     <p className="text-body-color text-base text-sm text-gray-500">
@@ -47,10 +48,10 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                
-                
+
+
                 <div className="mb-8 flex w-full max-w-[400px]">
-                
+
                    <div className="w-full">
                     <h4 className="text-dark mb-1 text-xl font-bold ">Contact Us</h4>
                     <p className="text-body-color text-base text-sm text-gray-500">
@@ -58,16 +59,17 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                
-                
-                
-          
+
+
+
+
               </div>
             </div>
-         
+
           </div>
         </div>
-      </section> 
+      </section>
+        <ItemContainer />
       <Footer/>
 
     </div>
