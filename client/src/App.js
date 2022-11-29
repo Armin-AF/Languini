@@ -11,6 +11,7 @@ import CreateEvent from "./pages/CreateEvent";
 import Loading from "./components/Loading";
 import EditEvent from "./pages/EditEvent";
 import FaQ from "./pages/Faq";
+import ContactPage from "./pages/ContactPage"
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -32,6 +33,7 @@ function App() {
                     <Route path="/create_event" element={<CreateEvent />} />
                     <Route path="/edit_event/:id" element={<EditEvent />} />
                     <Route path="/faq" element={<FaQ />} />
+                    <Route path="/ContactPage" element={<ContactPage />} />
 
                 </Routes>
             </div>}

@@ -16,6 +16,7 @@ const NavigationBar = () => {
                             <NavLink to="/profile" className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">Profile</NavLink>
                             <NavLink to="/about" className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">About</NavLink>
                             <NavLink to={"/faq"} className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">FAQ</NavLink>
+                            <NavLink to={"/contactpage"} className="text-gray-800 text-sm font-semibold hover:text-cyan-600 mr-4">Contact</NavLink>
                         </nav>
                         <div>
                             <LogOut />
