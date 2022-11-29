@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 import { useAuth0 } from "@auth0/auth0-react";
 import FormEditMeeting from "./FormEditMeeting";
-import EditButton from "./EditButton";
 
 const CardComponent = (props) => {
     const { user } = useAuth0();
     const [participants, setParticipants] = useState([]);
     const [openEditForm, setOpenEditForm] = useState(false);
+    const [show, setShow] = useState(false);
 
     const OnEditButtonClick = () => {
         if (openEditForm) {
@@ -85,15 +85,23 @@ const CardComponent = (props) => {
     participants?.map(element => arrayEmail.push(element.participantEmail))
 
     return (
-        <div className="flex flex-col justify-center">
-            <div
-                className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
+        <div className="flex flex-col justify-center my-10">
+            {!show && < div className="w-full relative flex flex-col hover:bg-gray-100 md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(true)}>
+                <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
+                <div>{props.location}</div>
+                <div>{props.language}</div>
+                <div>+</div>
+            </div>}
+            {show && <div
+                className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(false)}>
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
                     <img src="https://i.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g" alt="venue" className="rounded-xl object-top" />
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
                     <div className="flex justify-between item-center">
+
                         <p className="text-gray-600 font-bold text-sm md:block">📍{props.location}</p>
+
 
                         <div className="flex items-center">
                             <p className="
@@ -117,8 +125,9 @@ const CardComponent = (props) => {
                         ))}
                     </div>
                     {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
+
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };
