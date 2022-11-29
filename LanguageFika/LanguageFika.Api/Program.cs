@@ -46,6 +46,7 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IMeetingService, MeetingService>();
+builder.Services.AddTransient<IParticipantService, ParticipantService>();
 
 
 var app = builder.Build();
