@@ -7,6 +7,7 @@ const CardComponent = (props) => {
     const { user } = useAuth0();
     const [participants, setParticipants] = useState([]);
     const [openEditForm, setOpenEditForm] = useState(false);
+    const [show, setShow] = useState(false);
 
     const OnEditButtonClick = () => {
         if (openEditForm) {
@@ -85,8 +86,14 @@ const CardComponent = (props) => {
 
     return (
         <div className="flex flex-col justify-center my-10">
-            <div
-                className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
+            {!show && < div className="w-full relative flex flex-col hover:bg-gray-100 md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(true)}>
+                <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
+                <div>{props.location}</div>
+                <div>{props.language}</div>
+                <div>+</div>
+            </div>}
+            {show && <div
+                className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(false)}>
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
                     <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="rounded-xl object-top" />
                 </div>
@@ -121,7 +128,7 @@ const CardComponent = (props) => {
 
 
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };
