@@ -59,6 +59,7 @@ const CardComponent = (props) => {
                 headers: { 'Content-Type': 'application/json' },
             };
             await fetch(`https://localhost:7057/api/Meeting/${props.id}` , requestOptions)
+               props.reload1();
 
         } catch (e) {
             console.log(e.message);
@@ -78,6 +79,9 @@ const CardComponent = (props) => {
             console.log(e.message);
         }
     }
+
+    let arrayEmail = [];
+    participants?.map( element => arrayEmail.push(element.participantEmail))
 
     return (
         <div className="flex flex-col justify-center my-10">
@@ -100,10 +104,10 @@ const CardComponent = (props) => {
                     <h3 className="font-black text-gray-800 md:text-2xl text-xl">{props.language}</h3>
                     <p className="md:text-lg text-gray-500 text-base">{props.description}</p>
 
-                    {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
+                    {user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
                     <div>
-                        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleClick}>Join</button>
-                        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleRemove}>Remove</button>
+                        {arrayEmail?.includes(user.email) ? <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleRemove}>Remove</button>
+                        : arrayEmail.length < 5 ? <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleClick}>Join</button> : <button></button>}
                         {participants?.map((participant, index) => (
                             <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
                         ))}
