@@ -29,9 +29,8 @@ const FormEditMeeting = (props) => {
     return (
         <div>
             <form className="flex flex-col justify-center my-10">
-                <label className="text-2xl font-bold text-center">Edit Description</label>
                 <input className="border-2 border-gray-300 p-2 my-2" type="text" placeholder="Description" onChange={(e) => setMeetingDescription(e.target.value)} />
-                <button className="bg-cyan-400 hover:bg-cyan-300 text-gray-800 font-bold py-2 px-4 inline-flex items-center w-40 justify-center rounded-lg" onClick={OnEdit}>
+                <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={OnEdit}>
                     <span>Submit</span>
                 </button>
             </form>
