@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Disclosure } from '@headlessui/react'
+import Footer from "../components/Footer/Footer";
 
 
 
@@ -16,22 +17,22 @@ const Faq = () => {
         },
         {
             number: 2,
-            question: "What is Languini?",
+            question: "How to use Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 3,
-            question: "What is Languini?",
+            question: "Is Languini free?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 4,
-            question: "What is Languini?",
+            question: "How to sign up on Languini?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         },
         {
             number: 5,
-            question: "Languini?",
+            question: "Can I contribute to the project?",
             answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis deserunt, praesentium impedit provident amet laudantium quibusdam a saepe atque odio, quidem quia eos ab aperiam quos! Officia, ducimus temporibus!"
         }
     ]
@@ -42,7 +43,7 @@ const Faq = () => {
             {/* :TITLE & IMAGE */}
             <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
                 <img src="https://fancytailwind.com/static/faq1-8ef2a6c2addbed9f838eea20b9ad21b6.png" alt="Frequently Asked Questions" className="w-full h-full" />
-                <h2 className="text-center text-2xl sm:text-4xl text-gray-600 tracking-widest">Frequently Asked Questions 1</h2>
+                <h2 className="text-center text-2xl sm:text-4xl text-gray-600 tracking-widest">Frequently Asked Questions</h2>
             </div>
 
             {/* :FAQ */}
@@ -54,9 +55,9 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     {/* Question */}
-                                    <dt className={`group w-full border-b-2 border-sky-600 text-gray-800 hover:bg-gray-400 hover:text-white ${open && "bg-sky-600 text-white"}`}>
+                                    <dt className={`group w-full text-xl border-b-2 border-gray-50 font-bold text-black hover:bg-gray-200 hover:text-black rounded-xl hover:rounded-lg ${open && "text-white"}`}>
                                         <Disclosure.Button className="py-5 px-3 w-full flex justify-between items-center">
-                                            <span className="text-lg md:text-xl text-left font-semibold">{faq.question}</span>
+                                            <span className="text-lg md:text-xl text-left font-semi-bold">{faq.question}</span>
                                         </Disclosure.Button>
                                     </dt>
                                     {/* Answer */}
@@ -71,6 +72,7 @@ const Faq = () => {
                     ))
                 }
             </dl>
+            <Footer />
 
         </div>
     )
