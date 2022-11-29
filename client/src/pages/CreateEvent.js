@@ -2,7 +2,7 @@ import React, {useRef} from "react";
 import {useNavigate} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const CreateEvent = () => {
+const CreateEvent = (props) => {
     const inputDate = useRef(null);
     const inputDescription = useRef(null);
     const inputLocation = useRef(null);
@@ -31,7 +31,9 @@ const CreateEvent = () => {
         fetch('https://localhost:7057/api/Meeting', requestOptions)
             .then(response => {response.json()
                 console.log(response)})
-            .then(() => navigate('/events'));
+            .then(() => props.reload2());
+
+        props.close();
     };
 
     return (
