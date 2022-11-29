@@ -38,7 +38,7 @@ const Faq = () => {
     ]
 
     return (
-        <div className="w-full bg-gray-50">
+        <div className="w-full">
 
             {/* :TITLE & IMAGE */}
             <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
