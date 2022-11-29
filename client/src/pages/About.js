@@ -4,10 +4,8 @@ import ItemContainer from "../components/Footer/ItemContainer";
 const About = () => {
   return (
     <div>
-      <section className="bg-white py-20 lg:py-[150px] grid place-items-center ">
-        <div className="">
-          <div className="">
-            <div className="">
+      <section className="bg-white py-20 lg:py-[150px] grid place-items-center">
+       
               <div className="mb-12 max-w-[570px] lg:mb-0">
 
 
@@ -50,7 +48,7 @@ const About = () => {
                 </div>
 
 
-                <div className="mb-8 flex w-full max-w-[400px]">
+                <div className="flex w-full max-w-[400px]">
 
                    <div className="w-full">
                     <h4 className="text-dark mb-1 text-xl font-bold ">Contact Us</h4>
@@ -62,14 +60,10 @@ const About = () => {
 
 
 
-
-              </div>
-            </div>
-
-          </div>
+            
         </div>
+        <div className="mt-10"> <ItemContainer />  </div>
       </section>
-        <ItemContainer />
       <Footer/>
 
     </div>
