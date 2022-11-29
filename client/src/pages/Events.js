@@ -50,7 +50,7 @@ const Events = () => {
     isAuthenticated && (
       <div>
           <div className={"mt-10"}><ChangingText /></div>
-        <h1 className="text-1xl text-center font-bold text-gray-800 mt-10 shadow pb-10">Search for a language to begin. Can't find a suitable event? Simply create your own!</h1>
+        <h1 className="text-1xl text-center font-bold text-gray-800 mt-10 shadow p-10">Search for a language to begin. Can't find a suitable event? Simply create your own!</h1>
         <div className="flex justify-center my-10 space-x-40">
         <CreateButton reload1={Reload}/>
           <SearchBar posts={posts} setSearchResults={setSearchResults} />
