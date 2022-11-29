@@ -1,11 +1,13 @@
+import React from "react";
 import Footer from "../components/Footer/Footer";
 import ItemContainer from "../components/Footer/ItemContainer";
 
 const About = () => {
+
   return (
     <div>
-      <section className="bg-white py-20 lg:py-[150px] grid place-items-center">
-       
+      <section className="py-20 lg:py-[150px] grid place-items-center">
+
               <div className="mb-12 max-w-[570px] lg:mb-0">
 
 
@@ -60,7 +62,7 @@ const About = () => {
 
 
 
-            
+
         </div>
         <div className="mt-10"> <ItemContainer />  </div>
       </section>

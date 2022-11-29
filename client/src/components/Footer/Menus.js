@@ -11,8 +11,3 @@ export const LINKEDIN = [
     { name: "Armin Afazeli", link: "https://www.linkedin.com/in/arminafazeli/" },
     { name: "Dean Timmins", link: "https://www.linkedin.com/in/dean-timmins/" },
 ];
-export const COMPANY = [
-    { name: "About Us", link: "#" },
-    { name: "Customer Stories", link: "#" },
-    { name: "Tutorials & guides", link: "#" },
-];

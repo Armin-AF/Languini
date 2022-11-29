@@ -1,27 +1,28 @@
+import React from "react";
 import Footer from "../components/Footer/Footer";
 
 const ContactPage = () => {
   return (
     <div>
-      
-      
+
+
       <div>
-        
+
       <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 
-<section class="bg-white  xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
+<section class="xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
    <div class="container ">
       <div class="flex flex-wrap lg:justify-between -mx-4 ">
          <div class="w-full lg:w-1/2 xl:w-6/12 px-4 ">
             <div class="max-w-[570px] mb-12 lg:mb-0">
-               
+
                <h2
                   className="text-dark mb-1 text-xl font-bold pt-20"
                   >
                   GET IN TOUCH WITH US
                </h2>
                <p class="text-base text-body-color leading-relaxed mb-9 text-sm text-gray-500">
-                  At Languini we are all about connecting people. Do you need to come in contact with us, please fill out the form! 
+                  At Languini we are all about connecting people. Do you need to come in contact with us, please fill out the form!
                </p>
 
             </div>
@@ -110,7 +111,7 @@ const ContactPage = () => {
                         p-3
                         transition
                         hover:bg-opacity-90 "
-                       
+
                         >
                      Send Message
                      </button>
@@ -132,25 +133,25 @@ const ContactPage = () => {
                            />
                      </svg>
                   </span>
-                 
+
                </div>
             </div>
          </div>
       </div>
    </div>
 </section>
-        
-        
+
+
       </div>
-      
-      
-            
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
       <Footer/>
 
     </div>

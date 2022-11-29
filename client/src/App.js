@@ -11,13 +11,14 @@ import CreateEvent from "./pages/CreateEvent";
 import Loading from "./components/Loading";
 import EditEvent from "./pages/EditEvent";
 import FaQ from "./pages/Faq";
-import ContactPage from "./pages/ContactPage"
+import ContactPage from "./pages/ContactPage";
+import background from './assets/white-gold-geometric-pattern-background-vector_53876-140726BL.jpg';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
 
   return (
-      <div className="App">
+      <div style={{ backgroundImage: `url(${background})`}}>
         { isLoading? <Loading /> : !isAuthenticated ? (
                 <div>
                     <Landing />
