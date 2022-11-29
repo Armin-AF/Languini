@@ -86,13 +86,13 @@ const CardComponent = (props) => {
 
     return (
         <div className="flex flex-col justify-center my-10">
-            {!show && < div className="w-full relative flex flex-col hover:bg-gray-100 hover:cursor-pointer md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(true)}>
+            {show && < div className="w-full relative flex flex-col hover:bg-gray-100 hover:cursor-pointer md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(true)}>
                 <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
                 <div>{props.location}</div>
                 <div>{props.language}</div>
                 <div>+</div>
             </div>}
-            {show && <div
+            {!show && <div
                 className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(false)}>
                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
                     <img src="https://i.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g" alt="venue" className="rounded-xl object-top" />
