@@ -94,8 +94,8 @@ const CardComponent = (props) => {
             </div>}
             {!show && <div
                 className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(false)}>
-                <div className=" w-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="rounded-xl " />
+                <div className=" w-full h-full md:w-1/3 bg-white grid place-items-center">
+                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="object-cover w-full h-full rounded-xl" />
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 border rounded-lg">
                     <div className="flex justify-between item-center">
@@ -111,16 +111,16 @@ const CardComponent = (props) => {
                     <p className="md:text-sm text-gray-500 text-base">{props.description}</p>
                     <p className="text-gray-600 font-bold text-xs md:block">Created by: {props.creatorEmail}</p>
                     <p className="pb-2 w-full border-b-2 border-black-500"></p>
-                   
-                   
-                   
-                    <div className="grid grid-cols-2 text-left vertical pt-2"> 
-                        
+
+
+
+                    <div className="grid grid-cols-2 text-left vertical pt-2">
+
                         <div className="grid grid-row-2">
-                        
+
                         {arrayEmail?.includes(user.email) ? <button className="h-8 bg-red-500 hover:bg-red-400 text-white font-medium px-2 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all w-24" onClick={HandleRemove}>Leave</button>
                             : arrayEmail.length < 5 ? <button className="h-8 bg-cyan-500 hover:bg-cyan-400 text-white font-medium px-2 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all w-24" onClick={HandleClick}>Join</button> : <button></button>}
-                       
+
                             <div>
                                 {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 active:scale-[0.95] active:duration-75 transition-all" onClick={OnEditButtonClick}>✎</button>}
                                 {user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 ml-3 active:scale-[0.95] active:duration-75 transition-all" onClick={OnDelete}>🗑</button>}
@@ -135,8 +135,8 @@ const CardComponent = (props) => {
                             ))}
                     </div>
                     </div>
-                    
-                    
+
+
                     {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
 
                 </div>
