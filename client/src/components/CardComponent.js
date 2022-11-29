@@ -102,13 +102,13 @@ const CardComponent = (props) => {
 
                     {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
                     <div>
-                        <button className="bg-cyan-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleClick}>Join</button>
-                        <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={HandleRemove}>Remove</button>
+                        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleClick}>Join</button>
+                        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={HandleRemove}>Remove</button>
                         {participants?.map((participant, index) => (
                             <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
                         ))}
                     </div>
-                    {user.email === props.creatorEmail && <button className="bg-red-400 px-3 py-1 rounded-full text-xs font-medium text-gray-800 lg:w-20" onClick={OnDelete}>Delete Event</button>}
+                    {user.email === props.creatorEmail && <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={OnDelete}>Delete Event</button>}
                     {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
 
                 </div>
