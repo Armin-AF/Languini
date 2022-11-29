@@ -6,6 +6,7 @@ import CardList from "../components/CardList";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 import CreateButton from "../components/CreateButton";
+import ChangingText from "../components/ChangingText";
 
 const Events = () => {
   const { isAuthenticated } = useAuth0();
@@ -48,7 +49,8 @@ const Events = () => {
   return (
     isAuthenticated && (
       <div>
-        <h1 className="text-3xl text-center font-bold text-gray-800 mt-10">Welcome to Languini</h1>
+
+          <div className={"mt-10"}><ChangingText /></div>
         <h1 className="text-1xl text-center font-bold text-gray-800 mt-10">Search for a language to begin. Can't find a suitable event? Simply create your own!</h1>
         <div className="flex justify-center my-10 align-middle">
           <SearchBar posts={posts} setSearchResults={setSearchResults} />

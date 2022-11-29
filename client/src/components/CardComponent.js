@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 import { useAuth0 } from "@auth0/auth0-react";
 import FormEditMeeting from "./FormEditMeeting";
-import EditButton from "./EditButton";
 
 const CardComponent = (props) => {
     const { user } = useAuth0();
@@ -94,7 +93,7 @@ const CardComponent = (props) => {
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
                     <div className="flex justify-between item-center">
                         <p className="text-gray-600 font-bold text-sm md:block">{props.location}</p>
-                        
+
                         <div className="flex items-center">
                             <p className="
                             text-gray-600 font-bold text-sm ml-1">
@@ -118,8 +117,8 @@ const CardComponent = (props) => {
                     {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 lg:w-20" onClick={OnEditButtonClick}>✎</button>}
                     </div>
                     {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
-                    
-                    
+
+
 
                 </div>
             </div>
