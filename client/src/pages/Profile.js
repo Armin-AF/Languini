@@ -12,7 +12,7 @@ const Profile = () => {
       <>
         {isLoading ? <div><Loading/></div> :
 
-          <div className="my-40 w-96 h-96 pt-6 mx-auto space-y-5 flex flex-col items-center rounded overflow-hidden shadow-lg ">
+          <div className="bg-white my-40 w-96 h-96 pt-6 mx-auto space-y-5 flex flex-col items-center rounded overflow-hidden shadow-lg ">
               <span className="relative inline-block border-2 border-green-500 rounded-full" aria-label="avatar">
         {/* Picture */}
                   <img src={user.picture} alt="" className="w-30 h-30 rounded-full" />
