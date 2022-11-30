@@ -14,7 +14,7 @@ export const Landing = (props) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="hidden sm:block">
-        <img
+        <img id="logo"
           className="w-full h-full object-cover opacity-50"
           src={loginImg}
           alt="people learning"

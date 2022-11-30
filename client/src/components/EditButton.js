@@ -1,13 +1,8 @@
 import React from "react";
-import CreateEvent from "../pages/CreateEvent";
 import FormEditMeeting from "./FormEditMeeting";
 
 const Modal = (props) => {
   const [showModal, setShowModal] = React.useState(false);
-
-  const Close = () => {
-    CloseModal();
-  }
 
   const CloseModal = () => setShowModal(false);
 
