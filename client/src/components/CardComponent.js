@@ -85,7 +85,9 @@ const CardComponent = (props) => {
     participants?.map(element => arrayEmail.push(element.participantEmail))
 
     return (
+
         <div className=" flex flex-col justify-center my-10 text-left ">
+
             {show && < div className="w-full relative flex flex-col hover:bg-gray-100 hover:cursor-pointer md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(true)}>
                 <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
                 <div>{props.location}</div>

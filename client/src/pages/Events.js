@@ -32,7 +32,6 @@ const Events = () => {
 
   const Reload = async () => {
     try {
-      console.log("pre reload")
       await fetch('https://localhost:7057/api/Meeting')
         .then(response => response.json())
         .then(data => {
@@ -43,7 +42,6 @@ const Events = () => {
       console.log(e.message);
     }
     setLoading(false);
-    console.log("post reload")
   }
 
   return (

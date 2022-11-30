@@ -7,7 +7,7 @@ const LoginButton = () => {
 
     return (
         <div>
-            <button className="w-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all mb-20"
+            <button id='access' className="w-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all mb-20"
                 type="submit" onClick={() => loginWithRedirect()}>Access</button>
         </div>
     );
