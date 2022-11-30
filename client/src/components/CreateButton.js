@@ -12,7 +12,7 @@ const Modal = (props) => {
 
   return (
     <>
-      <button className="bg-cyan-500 hover:bg-cyan-400 text-white font-medium px-4 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all" type="button" onClick={() => setShowModal(true)}>Create Event</button>
+      <button className="bg-cyan-500 hover:bg-cyan-400 text-white font-medium px-4 py-1 w-60 h-10 text-sm border border-gray-400 rounded-lg shadow active:scale-[0.95] active:duration-75 transition-all" type="button" onClick={() => setShowModal(true)}>Create Event</button>
       {showModal ? (
         <>
           <div
