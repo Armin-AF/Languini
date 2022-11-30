@@ -7,7 +7,7 @@ const ContactPage = () => {
       <div>
       <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 
-<section className="xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
+<section className="pb-14 xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
    <div className="container ">
       <div className="flex flex-wrap lg:justify-between -mx-4 ">
          <div className="w-full lg:w-1/2 xl:w-6/12 px-4 ">
