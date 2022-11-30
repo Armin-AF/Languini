@@ -106,7 +106,7 @@ const CardComponent = (props) => {
                         <div className="flex items-center">
                             <p className="
                             text-gray-600 font-bold text-sm ml-1">
-                                <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
+                                🗓 <Moment format="MMM Do YYYY, h:mm a">{props.date}</Moment>
                             </p>
                         </div>
                     </div>

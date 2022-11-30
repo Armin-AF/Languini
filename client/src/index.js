@@ -11,6 +11,8 @@ root.render(
         domain="dev-c8roe23ts7o24plt.us.auth0.com"
         clientId="i8742sIwgn1eDwgmqMcycWqg863Vccw5"
         redirectUri={window.location.origin}
+        useRefreshTokens={true}
+        cacheLocation="localstorage"
     >
         <BrowserRouter>
         <App />
