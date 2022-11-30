@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 import { useAuth0 } from "@auth0/auth0-react";
 import FormEditMeeting from "./FormEditMeeting";
+import {FaTrash} from "react-icons/fa";
+import {FaRegEdit} from "react-icons/fa";
 
 const CardComponent = (props) => {
     const { user } = useAuth0();
@@ -119,14 +121,14 @@ const CardComponent = (props) => {
 
                     <div className="grid grid-cols-2 text-left vertical pt-2">
 
-                        <div className="grid grid-row-2">
+                        <div className="grid grid-row-2 ">
 
                         {arrayEmail?.includes(user.email) ? <button className="h-8 bg-red-500 hover:bg-red-400 text-white font-medium px-2 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all w-24" onClick={HandleRemove}>Leave</button>
                             : arrayEmail.length < 5 ? <button className="h-8 bg-cyan-500 hover:bg-cyan-400 text-white font-medium px-2 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all w-24" onClick={HandleClick}>Join</button> : <button></button>}
 
-                            <div>
-                                {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 active:scale-[0.95] active:duration-75 transition-all" onClick={OnEditButtonClick}>✎</button>}
-                                {user.email === props.creatorEmail && <button className="bg-transparent-400 px-3 py-1 rounded-full text-md font-medium text-gray-800 ml-3 active:scale-[0.95] active:duration-75 transition-all" onClick={OnDelete}>🗑</button>}
+                            <div className="pt-2">
+                                {user.email === props.creatorEmail && user.email === props.creatorEmail && <button className="hover:bg-green-300   border-2 rounded-md	w-10 h-10  bg-transparent-400 px-3 py-1  text-md font-medium text-gray-800 active:scale-[0.95] active:duration-75 transition-all" onClick={OnEditButtonClick}><FaRegEdit /></button>}
+                                {user.email === props.creatorEmail && <button className="hover:bg-red-300   border-2 rounded-md	w-10 h-10    bg-transparent-400 px-3 py-1 text-md font-medium text-gray-800 ml-3 active:scale-[0.95] active:duration-75 transition-all" onClick={OnDelete}><FaTrash /></button>}
                             </div>
 
 
