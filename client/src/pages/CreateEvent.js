@@ -14,6 +14,13 @@ const CreateEvent = (props) => {
         inputLocation.current.focus();
         inputLanguage.current.focus();
 
+        if (!(inputDate.current.value && inputDescription.current.value && inputLocation.current.value &&
+         inputLanguage.current.value))
+        {
+            props.close();
+            return;
+        }
+
         const requestOptions = {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
