@@ -101,7 +101,7 @@ const CardComponent = (props) => {
                     <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="object-cover rounded-xl" />
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 border rounded-lg">
-                    <div className="flex justify-between item-center">
+                    <div className="flex justify-between item-center flex-col">
                         <p className="text-gray-600 font-bold text-sm md:block">📍{props.location}</p>
                         <div className="flex items-center">
                             <p className="
