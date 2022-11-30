@@ -96,8 +96,8 @@ const CardComponent = (props) => {
             </div>}
             {!show && <div
                 className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white" onClick={() => setShow(false)}>
-                <div className=" w-full h-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="object-cover w-full h-full rounded-xl" />
+                <div className=" w-full h-min md:w-1/3 bg-white grid place-items-center">
+                    <img src="https://i.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" alt="venue" className="object-cover rounded-xl" />
                 </div>
                 <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 border rounded-lg">
                     <div className="flex justify-between item-center">
