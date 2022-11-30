@@ -50,9 +50,12 @@ const Events = () => {
           <div className={"mt-10"}><ChangingText /></div>
         <h1 className="text-gray-500 text-sm sm:text-sm text-center font-bold uppercase flex flex-col justify-around mt-8">Search for a language to begin. Can't find a suitable event? Simply create your own!</h1>
         <div className="flex justify-center my-10 space-x-40">
-        <CreateButton reload1={Reload}/>
+
           <SearchBar posts={posts} setSearchResults={setSearchResults} />
         </div>
+          <div className="flex justify-center my-4">
+              <CreateButton reload1={Reload}/>
+          </div>
 
         {loading ? <div>< Loading /></div> :
           <CardList searchResults={searchResults} reload={Reload} />}
