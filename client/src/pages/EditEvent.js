@@ -21,7 +21,7 @@ const EditEvent = (props) => {
                     creatorEmail: user.email
                 })
             };
-            await fetch(`https://localhost:7057/api/Meeting` , requestOptions)
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Meeting` , requestOptions)
         } catch (e) {
             console.log(e.message);
         }

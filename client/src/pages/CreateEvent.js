@@ -26,7 +26,7 @@ const CreateEvent = (props) => {
             })
         };
 
-        fetch('https://localhost:7057/api/Meeting', requestOptions)
+        fetch('https://lingofikaapi.azurewebsites.net/api/Meeting', requestOptions)
             .then(response => {response.json()
                 console.log(response)})
             .then(() => props.reload2());

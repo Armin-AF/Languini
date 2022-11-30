@@ -21,7 +21,7 @@ const CardComponent = (props) => {
     useEffect(() => {
         const getParticipants = async () => {
             try {
-                await fetch(`https://localhost:7057/api/Participant/${props.id}`)
+                await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant/${props.id}`)
                     .then(response => response.json())
                     .then(data => setParticipants(data))
             } catch (e) {
@@ -41,10 +41,10 @@ const CardComponent = (props) => {
                     meetingId: props.id
                 })
             };
-            await fetch('https://localhost:7057/api/Participant', requestOptions)
+            await fetch('https://lingofikaapi.azurewebsites.net/api/Participant', requestOptions)
                 .then(response => response.json())
 
-            await fetch(`https://localhost:7057/api/Participant/${props.id}`)
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant/${props.id}`)
                 .then(response => response.json())
                 .then(data => setParticipants(data))
 
@@ -59,7 +59,7 @@ const CardComponent = (props) => {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
             };
-            await fetch(`https://localhost:7057/api/Meeting/${props.id}`, requestOptions)
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Meeting/${props.id}`, requestOptions)
             props.reload1();
 
         } catch (e) {
@@ -70,9 +70,9 @@ const CardComponent = (props) => {
     const HandleRemove = async () => {
         try {
 
-            await fetch(`https://localhost:7057/api/Participant?participantEmail=${user.email}&meetingId=${props.id}`, { method: 'DELETE' })
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant?participantEmail=${user.email}&meetingId=${props.id}`, { method: 'DELETE' })
 
-            await fetch(`https://localhost:7057/api/Participant/${props.id}`)
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Participant/${props.id}`)
                 .then(response => response.json())
                 .then(data => setParticipants(data))
 

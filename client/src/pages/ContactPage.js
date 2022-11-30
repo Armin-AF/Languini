@@ -4,10 +4,7 @@ import Footer from "../components/Footer/Footer";
 const ContactPage = () => {
   return (
     <div>
-
-
       <div>
-
       <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 
 <section className="xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
@@ -140,20 +137,8 @@ const ContactPage = () => {
       </div>
    </div>
 </section>
-
-
       </div>
-
-
-
-
-
-
-
-
-
       <Footer/>
-
     </div>
   );
 }

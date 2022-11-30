@@ -11,7 +11,6 @@ const FormEditMeeting = (props) => {
         let oldValue = state;
         let newValue = e.target.value;
         setState(newValue)
-        // your logic
     };
 
     const OnEdit = async () => {
@@ -28,7 +27,7 @@ const FormEditMeeting = (props) => {
                     creatorEmail: user.email
                 })
             };
-            await fetch(`https://localhost:7057/api/Meeting` , requestOptions)
+            await fetch(`https://lingofikaapi.azurewebsites.net/api/Meeting` , requestOptions)
         } catch (e) {
             console.log(e.message);
         }

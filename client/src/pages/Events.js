@@ -16,7 +16,7 @@ const Events = () => {
 
   useEffect(() => {
       try {
-        fetch('https://localhost:7057/api/Meeting')
+        fetch('https://lingofikaapi.azurewebsites.net/api/Meeting')
           .then(response => response.json())
           .then(data => {
             setPosts(data)
@@ -31,7 +31,7 @@ const Events = () => {
 
   const Reload = async () => {
     try {
-      await fetch('https://localhost:7057/api/Meeting')
+      await fetch('https://lingofikaapi.azurewebsites.net/api/Meeting')
         .then(response => response.json())
         .then(data => {
           setPosts(data)
