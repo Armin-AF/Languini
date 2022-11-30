@@ -10,31 +10,31 @@ const ContactPage = () => {
 
       <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 
-<section class="xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
-   <div class="container ">
-      <div class="flex flex-wrap lg:justify-between -mx-4 ">
-         <div class="w-full lg:w-1/2 xl:w-6/12 px-4 ">
-            <div class="max-w-[570px] mb-12 lg:mb-0">
+<section className="xl:py-[120px]  sm:pt-[5px] overflow-hidden relative z-10 ">
+   <div className="container ">
+      <div className="flex flex-wrap lg:justify-between -mx-4 ">
+         <div className="w-full lg:w-1/2 xl:w-6/12 px-4 ">
+            <div className="max-w-[570px] mb-12 lg:mb-0">
 
                <h2
                   className="text-dark mb-1 text-xl font-bold pt-20"
                   >
                   GET IN TOUCH WITH US
                </h2>
-               <p class="text-base text-body-color leading-relaxed mb-9 text-sm text-gray-500">
+               <p className="text-base text-body-color leading-relaxed mb-9 text-sm text-gray-500">
                   At Languini we are all about connecting people. Do you need to come in contact with us, please fill out the form!
                </p>
 
             </div>
          </div>
-         <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
-            <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
+         <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
+            <div className="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
                <form>
-                  <div class="mb-6">
+                  <div className="mb-6">
                      <input
                         type="text"
                         placeholder="Your Name"
-                        class="
+                        className="
                         w-full
                         rounded
                         py-3
@@ -47,11 +47,11 @@ const ContactPage = () => {
                         "
                         />
                   </div>
-                  <div class="mb-6">
+                  <div className="mb-6">
                      <input
                         type="email"
                         placeholder="Your Email"
-                        class="
+                        className="
                         w-full
                         rounded
                         py-3
@@ -64,7 +64,7 @@ const ContactPage = () => {
                         "
                         />
                   </div>
-                  <div class="mb-6">
+                  <div className="mb-6">
                      <input
                         type="text"
                         placeholder="Your Phone"
@@ -81,11 +81,11 @@ const ContactPage = () => {
                         "
                         />
                   </div>
-                  <div class="mb-6">
+                  <div className="mb-6">
                      <textarea
                         rows="6"
                         placeholder="Your Message"
-                        class="
+                        className="
                         w-full
                         rounded
                         py-3
@@ -118,7 +118,7 @@ const ContactPage = () => {
                   </div>
                </form>
                <div>
-                  <span class="absolute -top-10 -right-9 z-[-1]">
+                  <span className="absolute -top-10 -right-9 z-[-1]">
                      <svg
                         width="100"
                         height="100"
@@ -126,8 +126,8 @@ const ContactPage = () => {
                         fill="none"
                         >
                         <path
-                           fill-rule="evenodd"
-                           clip-rule="evenodd"
+                           fillRule="evenodd"
+                           clipRule="evenodd"
                            d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
                            fill="#37b5d8"
                            />

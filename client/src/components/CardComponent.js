@@ -133,7 +133,7 @@ const CardComponent = (props) => {
                         <div className="font-bold text-sm">
                             Participants
                             {participants?.map((participant, index) => (
-                            <p className="text-gray-600 font-thin text-sm mt-2" key={index}>{participant.participantEmail}</p>
+                            <p className="text-gray-600 font-thin text-sm mt- overflow-hidden" key={index}>{participant.participantEmail}</p>
                             ))}
                     </div>
                     </div>

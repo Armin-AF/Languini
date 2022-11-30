@@ -3,7 +3,7 @@ import './App.css';
 import Events from "./pages/Events";
 import {useAuth0} from "@auth0/auth0-react";
 import {Landing} from "./pages/Landing";
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NavigationBar from "./components/NavigationBar";
 import Profile from "./pages/Profile";
 import About from "./pages/About";

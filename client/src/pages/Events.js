@@ -4,7 +4,6 @@ import Footer from "../components/Footer/Footer";
 import SearchBar from "../components/Search";
 import CardList from "../components/CardList";
 import Loading from "../components/Loading";
-import { Link } from "react-router-dom";
 import CreateButton from "../components/CreateButton";
 import ChangingText from "../components/ChangingText";
 

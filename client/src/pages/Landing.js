@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import loginImg from "../assets/learning1.jpg";
 import brandImg from "../assets/BrandName_Logo_TagLine_1000_Transparency.png";
 import AccessComponent from "../components/AccessComponent";
 
-export const Landing = (props) => {
-  const [email, setEmail] = useState("");
+export const Landing = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
   };
 
   return (

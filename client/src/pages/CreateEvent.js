@@ -1,5 +1,4 @@
 import React, {useRef} from "react";
-import {useNavigate} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const CreateEvent = (props) => {
@@ -7,7 +6,6 @@ const CreateEvent = (props) => {
     const inputDescription = useRef(null);
     const inputLocation = useRef(null);
     const inputLanguage = useRef(null);
-    const navigate = useNavigate();
     const { user } = useAuth0();
 
     const onButtonClick = () => {

@@ -11,7 +11,7 @@ const Footer = () => {
                 {/* :SITE NAME & SOCIAL NETWORKS */}
                 <div className="relative mt-14 sm:mt-0 px-5 flex flex-col justify-center items-center text-gray-500">
                     {/* ::Site name */}
-                    <h1 className="font-title text-4xl text-center font-semibold mt-auto">Languini</h1>
+                    <h1 className="font-title text-xl text-center font-semi-bold mt-auto">Developed by: Sc#ripted Away</h1>
                     {/* ::Social & copyright */}
                     <div className="mt-auto flex flex-col items-center">
                         {/* :::Social */}

@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import LogOut from "./LogOut";
 import logo from '../assets/BrandNameAndLogoHorisonal.png';
 import logomobile from '../assets/logo_transparent_favicon.png';
 import { useAuth0 } from "@auth0/auth0-react";
