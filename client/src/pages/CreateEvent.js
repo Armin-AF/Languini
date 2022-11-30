@@ -48,21 +48,15 @@ const CreateEvent = (props) => {
     return (
         <>
             <div className="grid grid-cols-1 mb-10 space-x-1 space-y-1">
+                
                 <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 ml-1" placeholder="Date" ref={inputDate} type="datetime-local" required={true} />
-                <p className="invisible peer-invalid:visible text-red-700 font-light">
-                This field cannot be empty
-                </p>
+
                 <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 peer border border-slate-400" ref={inputDescription} type="text" placeholder="Description" required={true} />
-                <p className="invisible peer-invalid:visible text-red-700 font-light">
-                    This field cannot be empty
-                </p>
-                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 peer border border-slate-400" ref={inputLocation} type="text" placeholder="Location" required={true} /><p className="invisible peer-invalid:visible text-red-700 font-light">
-                This field cannot be empty
-            </p>
+
+                <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 peer border border-slate-400" ref={inputLocation} type="text" placeholder="Location" required={true} />
+
                 <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-80 peer border border-slate-400" ref={inputLanguage} type="text" placeholder="Language" required={true} />
-                <p className="invisible peer-invalid:visible text-red-700 font-light">
-                    This field cannot be empty
-                </p>
+
             </div>
             <button className="bg-cyan-500 hover:bg-cyan-400 text-white font-medium px-2 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all h-8 w-full" onClick={onButtonClick}>Submit</button>
         </>
