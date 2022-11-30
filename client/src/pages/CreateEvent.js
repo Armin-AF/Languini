@@ -17,7 +17,6 @@ const CreateEvent = (props) => {
         if (!(inputDate.current.value && inputDescription.current.value && inputLocation.current.value &&
          inputLanguage.current.value))
         {
-            props.close();
             return;
         }
 
