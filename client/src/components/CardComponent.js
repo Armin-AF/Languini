@@ -81,6 +81,7 @@ const CardComponent = (props) => {
         }
     }
 
+
     let arrayEmail = [];
     participants?.map(element => arrayEmail.push(element.participantEmail))
 
@@ -138,8 +139,7 @@ const CardComponent = (props) => {
                     </div>
                     </div>
 
-
-                    {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} />}
+                    {openEditForm && <FormEditMeeting id={props.id} date={props.date} description={props.description} location={props.location} language={props.language} creatorEmail={props.creatorEmail} close={() => setOpenEditForm(false)} reloadEdit={props.reload1} />}
 
                 </div>
             </div>}

@@ -8,12 +8,11 @@ const FormEditMeeting = (props) => {
 
 
     let onChange = (e) => {
-        let oldValue = state;
         let newValue = e.target.value;
         setState(newValue)
     };
 
-    const OnEdit = async () => {
+    const OnEdit = async (e) => {
         try {
             const requestOptions = {
                 method: 'PATCH',
@@ -28,6 +27,9 @@ const FormEditMeeting = (props) => {
                 })
             };
             await fetch(`https://lingofikaapi.azurewebsites.net/api/Meeting` , requestOptions)
+              .then(props.reloadEdit)
+              .then(props.close)
+              .then(e.preventDefault())
         } catch (e) {
             console.log(e.message);
         }
