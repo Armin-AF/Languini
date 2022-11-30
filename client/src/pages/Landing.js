@@ -27,6 +27,7 @@ export const Landing = (props) => {
         >
           <img
             src={brandImg}
+            alt={"brand"}
           />
           <AccessComponent />
         </form>

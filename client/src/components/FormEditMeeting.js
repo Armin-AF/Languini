@@ -4,7 +4,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 const FormEditMeeting = (props) => {
 
     const { user } = useAuth0();
-    const [meetingDescription, setMeetingDescription] = useState(props.description);
+    const [state, setState] = useState(props.description);
+
+
+    let onChange = (e) => {
+        let oldValue = state;
+        let newValue = e.target.value;
+        setState(newValue)
+        // your logic
+    };
 
     const OnEdit = async () => {
         try {
@@ -14,7 +22,7 @@ const FormEditMeeting = (props) => {
                 body: JSON.stringify({
                     meetingId: props.id,
                     date: props.date,
-                    description: meetingDescription,
+                    description: state,
                     location: props.location,
                     language: props.language,
                     creatorEmail: user.email
@@ -29,7 +37,7 @@ const FormEditMeeting = (props) => {
     return (
         <div>
             <form className="flex flex-col justify-center my-10">
-                <input className="border-2 border-gray-300 p-2 my-2" type="text" placeholder="Description" onChange={(e) => setMeetingDescription(e.target.value)} />
+                <input className="border-2 border-gray-300 p-2 my-2" type="text" placeholder="Description" value={state} onChange={onChange} />
                 <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={OnEdit}>
                     <span>Submit</span>
                 </button>

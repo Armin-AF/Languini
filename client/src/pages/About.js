@@ -1,77 +1,39 @@
+import React from "react";
 import Footer from "../components/Footer/Footer";
 import ItemContainer from "../components/Footer/ItemContainer";
 
 const About = () => {
+
   return (
     <div>
-      <section className="bg-white py-20 lg:py-[150px] grid place-items-center ">
-        <div className="">
-          <div className="">
-            <div className="">
-              <div className="mb-12 max-w-[570px] lg:mb-0">
-
-
-
-                <div className="mb-8 flex w-full max-w-[400px]">
-
-                   <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold ">About Us</h4>
-                    <p className="text-body-color text-base text-sm text-gray-500">
-                      We are a Stockholm based scale up, started at Salt, school of applied technology. We are currently a
-                      small core team of four people.
-                    </p>
-                  </div>
+        <div>
+            <section className="text-gray-500">
+                <div className="container flex flex-col justify-center p-4 mx-auto md:p-8 mt-20 mb-40">
+                    <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl text-black">About Us</h2>
+                    <p className="p-2 text-sm font-medium tracking-wider text-center uppercase mb-20"> We are a Stockholm based scale up, started at Salt, school of applied technology. We are currently a
+                        small core team of four people.</p>
+                    <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
+                        <div>
+                            <h3 className="font-semi-bold text-black">History of Sc#ripted Away</h3>
+                            <p className="mt-1 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semi-bold text-black">Our Mission</h3>
+                            <p className="mt-1 dark:text-gray-400">At Languini we are all about connecting people. Our mission is encouraging curios people to connect, enabling learning new languages and finding new friends! We hope you will have a great time using our services.</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semi-bold text-black">The Team</h3>
+                            <p className="mt-1 dark:text-gray-400">Armin Afazeli, Dean Timmins,  Eric Rosén and Maximiliano Barrientos</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semi-bold text-black">Contact Us</h3>
+                            <p className="mt-1 dark:text-gray-400">info@linguini.com</p>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
-                <div className="mb-8 flex w-full max-w-[400px]">
-
-                   <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold ">Our Mission</h4>
-                    <p className="text-body-color text-base text-sm text-gray-500">
-                      At Languini we are all about connecting people. Our mission is encouraging curios people to
-                      connect, enabling learning new languages and finding new friends!
-                      We hope you will have a great time using our services.
-                    </p>
-                  </div>
-                </div>
-
-
-                <div className="mb-8 flex w-full max-w-[400px]">
-
-                   <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold ">The Team</h4>
-                    <p className="text-body-color text-base text-sm text-gray-500">
-                       Maximiliano Barrientos, Eric Rosén, Dean Timmins and Armin Afazeli.
-                    </p>
-                  </div>
-                </div>
-
-
-                <div className="mb-8 flex w-full max-w-[400px]">
-
-                   <div className="w-full">
-                    <h4 className="text-dark mb-1 text-xl font-bold ">Contact Us</h4>
-                    <p className="text-body-color text-base text-sm text-gray-500">
-                        info@linguini.com
-                    </p>
-                  </div>
-                </div>
-
-
-
-
-              </div>
-            </div>
-
-          </div>
+            </section>
+            <Footer />
         </div>
-      </section>
-        <ItemContainer />
-      <Footer/>
-
     </div>
   );
 }
