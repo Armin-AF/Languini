@@ -50,7 +50,7 @@ const NavigationBar = () => {
                         <NavLink to={"/faq"} className="text-white text-sm font-medium hover:text-cyan-600">FAQ</NavLink>
                         <NavLink to={"/contactpage"} className="text-white text-sm font-medium hover:text-cyan-600">Contact</NavLink>
                     </nav>
-                    <NavLink to="/profile">
+                    <NavLink to="/profile" className="lg:hidden md:hidden">
                             <span className="relative inline-block border-2 border-green-500 rounded-full" aria-label="avatar">
                                 <img src={user.picture} alt="" className="w-auto h-8 rounded-full" />
                                 <span className="absolute top-0 right-2 w-2 h-2 rounded-full bg-green-500 ring-2 ring-gray-50" />
