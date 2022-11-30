@@ -19,7 +19,7 @@ const ContactPage = () => {
                   GET IN TOUCH WITH US
                </h2>
                <p className="text-base text-body-color leading-relaxed mb-9 text-sm text-gray-500">
-                  At Languini we are all about connecting people. Do you need to come in contact with us, please fill out the form!
+                  At Sc#ripted Away, we are all about connecting people. If you want to contact us, please fill out the form!
                </p>
 
             </div>

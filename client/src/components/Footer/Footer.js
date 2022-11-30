@@ -60,7 +60,7 @@ const Footer = () => {
                     <div className="col-span-2 md:col-span-1 pb-0 md:py-3 px-4">
                         <h3 className="py-1.5 md:py-4 text-center sm:text-left text-xl text-gray-500 font-bold tracking-wide">Navigation</h3>
                         <nav className="flex justify-around md:flex-col font-medium list-none">
-                            <li> <NavLink to="/events" >Events</NavLink></li>
+                            <li> <NavLink to="/" >Events</NavLink></li>
                             <li><NavLink to="/about" >About</NavLink></li>
                             <li><NavLink to={"/faq"} >FAQ</NavLink></li>
                             <li><NavLink to={"/contactPage"} >Contact</NavLink></li>

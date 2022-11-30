@@ -28,7 +28,6 @@ function App() {
                 <NavigationBar />
                 <Routes>
                     <Route path="/" element={<Events />} />
-                    <Route path="/events" element={<Events />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/create_event" element={<CreateEvent />} />

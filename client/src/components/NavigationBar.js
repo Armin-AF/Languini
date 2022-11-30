@@ -26,7 +26,7 @@ const NavigationBar = () => {
                     </div>
                     <div className='hidden sm:flex sm:items-center'>
                         <nav>
-                            <NavLink to="/events" className="text-white text-sm font-semibold hover:text-cyan-600 mr-4" >Events</NavLink>
+                            <NavLink to="/" className="text-white text-sm font-semibold hover:text-cyan-600 mr-4" >Events</NavLink>
                             <NavLink to="/about" className="text-white text-sm font-semibold hover:text-cyan-600 mr-4">About</NavLink>
                             <NavLink to={"/faq"} className="text-white text-sm font-semibold hover:text-cyan-600 mr-4">FAQ</NavLink>
                             <NavLink to={"/contactpage"} className="text-white text-sm font-semibold hover:text-cyan-600 mr-4">Contact</NavLink>
@@ -44,7 +44,7 @@ const NavigationBar = () => {
                     </div>
 
                     <nav className='lg:hidden md:hidden sm:flex justify-center content-center space-x-7'>
-                        <NavLink to="/events" className="text-white text-sm font-medium hover:text-cyan-600" >Events</NavLink>
+                        <NavLink to="/" className="text-white text-sm font-medium hover:text-cyan-600" >Events</NavLink>
                         <NavLink to="/about" className="text-white text-sm font-medium hover:text-cyan-600">About</NavLink>
                         <NavLink to={"/faq"} className="text-white text-sm font-medium hover:text-cyan-600">FAQ</NavLink>
                         <NavLink to={"/contactpage"} className="text-white text-sm font-medium hover:text-cyan-600">Contact</NavLink>

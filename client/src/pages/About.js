@@ -18,7 +18,7 @@ const About = () => {
                         </div>
                         <div>
                             <h3 className="font-semi-bold text-black">Our Mission</h3>
-                            <p className="mt-1 dark:text-gray-400">At Sc#ripted Away we are all about connecting people. Our mission is encouraging curios people to connect, enabling learning new languages and finding new friends! We hope you will have a great time using our services.</p>
+                            <p className="mt-1 dark:text-gray-400">At Sc#ripted Away we are all about connecting people. Our mission is encouraging curious people to connect, enabling learning new languages and finding new friends! We hope you will have a great time using our services.</p>
                         </div>
                         <div>
                             <h3 className="font-semi-bold text-black">The Team</h3>
