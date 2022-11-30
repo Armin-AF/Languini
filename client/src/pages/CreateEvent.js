@@ -14,6 +14,11 @@ const CreateEvent = (props) => {
         inputLocation.current.focus();
         inputLanguage.current.focus();
 
+        if( new Date(inputDate.current.value) < (Date.now() + 1) )
+        {
+            return;
+        }
+
         if (!(inputDate.current.value && inputDescription.current.value && inputLocation.current.value &&
          inputLanguage.current.value))
         {
