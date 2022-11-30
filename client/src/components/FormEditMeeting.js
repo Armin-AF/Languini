@@ -37,8 +37,8 @@ const FormEditMeeting = (props) => {
     return (
         <div>
             <form className="flex flex-col justify-center my-10">
-                <input className="border-2 border-gray-300 p-2 my-2" type="text" placeholder="Description" value={state} onChange={onChange} />
-                <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={OnEdit}>
+                <input className="border-2 border-gray-300 p-2 my-2 text-gray-500 text-sm" type="text" placeholder="Description" value={state} onChange={onChange} />
+                <button className="bg-cyan-500 hover:bg-cyan-400 text-white font-medium px-2 py-1 text-sm border border-gray-400 rounded shadow active:scale-[0.95] active:duration-75 transition-all h-8" onClick={OnEdit}>
                     <span>Submit</span>
                 </button>
             </form>
