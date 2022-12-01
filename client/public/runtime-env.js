@@ -1,0 +1,1 @@
+window.__RUNTIME_CONFIG__ = {"REACT_APP_AUTH0_DOMAIN":"dev-c8roe23ts7o24plt.us.auth0.com","REACT_APP_AUTH0_CLIENT_ID":"i8742sIwgn1eDwgmqMcycWqg863Vccw5","REACT_APP_AUTH0_CALLBACK_URL":"http://localhost:3000","REACT_APP_API_SERVER_URL":"https://lingofikaapi.azurewebsites.net/api","REACT_APP_AUTH0_AUDIENCE":"https://lingofikaapi.azurewebsites.net"};

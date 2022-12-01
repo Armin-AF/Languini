@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageFika.Api", "LanguageFika.Api\LanguageFika.Api.csproj", "{5A8DEF49-FFDC-42FC-96C0-573B9DC43F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FikaTests", "FikaTests\FikaTests.csproj", "{26B0605E-DF4F-413C-B3CF-D5DE460B882F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A8DEF49-FFDC-42FC-96C0-573B9DC43F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A8DEF49-FFDC-42FC-96C0-573B9DC43F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A8DEF49-FFDC-42FC-96C0-573B9DC43F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A8DEF49-FFDC-42FC-96C0-573B9DC43F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B0605E-DF4F-413C-B3CF-D5DE460B882F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B0605E-DF4F-413C-B3CF-D5DE460B882F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B0605E-DF4F-413C-B3CF-D5DE460B882F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B0605E-DF4F-413C-B3CF-D5DE460B882F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
