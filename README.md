@@ -1,15 +1,29 @@
 # Languini
 
-Welcome to Languini, a social platform that allows you to create and join events to learn and teach languages. Our aim is to make language learning a fun and enjoyable experience, while also providing an opportunity to meet new people with similar interests.
+</br>
+
+![languini1](https://user-images.githubusercontent.com/90157472/230781514-f945d72d-d121-4e47-ae43-8409b210f834.jpeg)
+
+</br>
+
+### Welcome to Languini, a social platform that allows you to create and join events to learn and teach languages. Our aim is to make language learning a fun and enjoyable experience, while also providing an opportunity to meet new people with similar interests.
+
+</br>
+</br>
 
 <img width="1720" alt="Screenshot 2022-12-01 at 15 53 15" src="https://user-images.githubusercontent.com/90157472/205158943-f039edfb-6ed8-4bb1-85f6-64f093d31658.png">
 
 ## Demo
 
+</br>
+
 Watch our YouTube video to get a glimpse of how Languini works. (Click on the image to play)
+
+</br>
 
 [![Languini Youtube](https://user-images.githubusercontent.com/90157472/230780854-706e5f1e-7283-45d1-bd32-0dbb567c2eb7.png)](https://www.youtube.com/watch?v=gmDKdvHgV8Q)
 
+</br>
 
 ## Technology Stack
 
