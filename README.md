@@ -23,12 +23,12 @@ Languini is built with the following technologies:
 
 ## Features
 
-Create and join events for language learning and teaching
-Search for events by language or location
-Edit or delete events you have created
-Login with your Google account
-Scalable and testable backend architecture
-All endpoints available for CRUD operations
+- Create and join events for language learning and teaching
+- Search for events by language or location
+- Edit or delete events you have created
+- Login with your Google account
+- Scalable and testable backend architecture
+- All endpoints available for CRUD operations
 
 
 ## Backend Architecture
