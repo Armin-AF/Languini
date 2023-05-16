@@ -1,12 +1,12 @@
 # Languini
 
+### Welcome to Languini, a social platform that allows you to create and join events to learn and teach languages. Our aim is to make language learning a fun and enjoyable experience, while also providing an opportunity to meet new people with similar interests.
+
 </br>
 
 ![languini1](https://user-images.githubusercontent.com/90157472/230781514-f945d72d-d121-4e47-ae43-8409b210f834.jpeg)
 
 </br>
-
-### Welcome to Languini, a social platform that allows you to create and join events to learn and teach languages. Our aim is to make language learning a fun and enjoyable experience, while also providing an opportunity to meet new people with similar interests.
 
 </br>
 </br>
