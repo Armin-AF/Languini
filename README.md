@@ -37,12 +37,33 @@ Languini is built with the following technologies:
 
 ## Features
 
-- Create and join events for language learning and teaching
-- Search for events by language or location
-- Edit or delete events you have created
-- Login with your Google account
-- Scalable and testable backend architecture
-- All endpoints available for CRUD operations
+Languini offers the following key features:
+
+### Event Creation and Joining
+
+- Users can create events based on specific languages and topics of interest.
+- Participants can join events and engage in language learning and teaching activities.
+
+### Event Search
+
+- Users can search for events based on language, location, or other criteria to find events that match their interests.
+
+### Event Management
+
+- Event creators have the ability to edit or delete their events, ensuring they have full control over the content and details.
+
+### User Authentication
+
+- Users can log in to Languini using their Google accounts, making the registration and sign-in process seamless and convenient.
+
+### Scalable Backend Architecture
+
+- Languini's backend architecture is designed with scalability in mind, allowing the platform to handle a growing user base and increasing event activities.
+- The backend follows best practices and uses the Unit of Work pattern for improved performance and the Repository pattern for easier testing and maintenance.
+
+### CRUD Operations
+
+- All necessary endpoints are available for performing Create, Read, Update, and Delete (CRUD) operations on events and user data.
 
 
 ## Backend Architecture
